@@ -1,0 +1,1525 @@
+ListName,ListFilter,ItemOrder,Item,ItemDescription,FieldUsedIn,ValidateLoops,Validate,Note,Flag
+Accuracy,,0,,Null,LocationAccuracy,,FALSE,,FALSE
+Accuracy,,1,1,GPS base-corrected,LocationAccuracy,,FALSE,,FALSE
+Accuracy,,2,10,GPS,LocationAccuracy,,FALSE,,FALSE
+Accuracy,,3,100,1:10k scrambled GPS,LocationAccuracy,,FALSE,,FALSE
+Accuracy,,4,1000,1:50k,LocationAccuracy,,FALSE,,FALSE
+Accuracy,,5,10000,1:250k,LocationAccuracy,,FALSE,,FALSE
+ArborealLichenLoading,,1,,null,,,FALSE,,FALSE
+ArborealLichenLoading,,2,0,None,,,FALSE,,FALSE
+ArborealLichenLoading,,3,1,Rare,,,FALSE,,FALSE
+ArborealLichenLoading,,4,2,Occasional,,,FALSE,,FALSE
+ArborealLichenLoading,,5,3,Common,,,FALSE,,FALSE
+ArborealLichenLoading,,6,4,Abundant,,,FALSE,,FALSE
+ArborealLichenLoading,,7,5,Very Abundant,,,FALSE,,FALSE
+AvailableForge,,2,1,Class 1,,,FALSE,,FALSE
+AvailableForge,,3,2,Class 2,,,FALSE,,FALSE
+AvailableForge,,4,3,Class 3,,,FALSE,,FALSE
+AvailableForge,,5,4,Class 4,,,FALSE,,FALSE
+BEC_Use,,1,1,Biodiversity: Intensive plots where full species list has been verified.,BEC_Use,,FALSE,,FALSE
+BEC_Use,,2,2,Classification: Complete list of species but generally without vouchers and likely missing uncommon non-vasculars,BEC_Use,,FALSE,,FALSE
+BEC_Use,,3,3,Support: Species list complete enough for accurate assessment of site units but not complete enough for use in site unit development,BEC_Use,,FALSE,,FALSE
+BEC_Use,,4,4,Insufficient: Plots missing key information that maybe retrievable,BEC_Use,,FALSE,,FALSE
+BEC_Use,,4.1,4.1,Insufficient: Georeferencing missing or inaccurate,BEC_Use,,FALSE,,FALSE
+BEC_Use,,4.2,4.2,Insufficient: Unidentified major species,BEC_Use,,FALSE,,FALSE
+BEC_Use,,4.3,4.3,Insufficient: Lacking environmental information,BEC_Use,,FALSE,,FALSE
+BEC_Use,,5,5,"Poor quality: Major species not identified, very limited species lists etc.",BEC_Use,,FALSE,,FALSE
+BEC_Use,,6,6,Visuals: Limited data but georeferenced site unit calls. Should be removed from BECMaster to a locations dataset,BEC_Use,,FALSE,,FALSE
+BEC_Use,,7,7,Remove: Plots are substandard and of limited value,BEC_Use,,FALSE,,FALSE
+BedrockType,,2,ag,Extrusive pyroclastic - agglomerate,,,FALSE,,FALSE
+BedrockType,,3,ak,Clastic non-calcareous - medium grained - arkose,,,FALSE,,FALSE
+BedrockType,,4,am,Non-foliated coarse grained - amphibolite,,,FALSE,,FALSE
+BedrockType,,5,an,Extrusive intermediate - andesite,,,FALSE,,FALSE
+BedrockType,,6,ar,Non-foliated fine grained - argillite,,,FALSE,,FALSE
+BedrockType,,7,ba,Precipitates crystalline - non-calcareous - barite,,,FALSE,,FALSE
+BedrockType,,8,bs,Extrusive basic (mafic) - basalt,,,FALSE,,FALSE
+BedrockType,,9,bx,Clastic non-calcareous - coarse grained - breccia,,,FALSE,,FALSE
+BedrockType,,10,cg,Clastic non-calcareous - coarse grained - conglomerate,,,FALSE,,FALSE
+BedrockType,,11,co,Organic carbonaceous - coal,,,FALSE,,FALSE
+BedrockType,,12,da,Extrusive acid (felsic) - dacite,,,FALSE,,FALSE
+BedrockType,,13,dg,Foliated medium to coarse grained - dorite gneiss,,,FALSE,,FALSE
+BedrockType,,14,di,Intrusive intermediate - diorite,,,FALSE,,FALSE
+BedrockType,,15,dm,Non-foliated calcareous - dolomite marble,,,FALSE,,FALSE
+BedrockType,,16,do,Precipitates crystalline - calcareous - dolomite,,,FALSE,,FALSE
+BedrockType,,17,du,Intrusive basic (mafic) - dunite,,,FALSE,,FALSE
+BedrockType,,18,ea,Extrusive acid (felsic),,,FALSE,,FALSE
+BedrockType,,19,eb,Extrusive basic (mafic),,,FALSE,,FALSE
+BedrockType,,20,ei,Extrusive intermediate,,,FALSE,,FALSE
+BedrockType,,21,ep,Extrusive pyroclastic,,,FALSE,,FALSE
+BedrockType,,22,fc,Foliated coarse grained,,,FALSE,,FALSE
+BedrockType,,23,ff,Foliated fine grained,,,FALSE,,FALSE
+BedrockType,,24,fm,Foliated medium to coarse grained,,,FALSE,,FALSE
+BedrockType,,25,gb,Intrusive basic (mafic) - gabbro,,,FALSE,,FALSE
+BedrockType,,26,gd,Intrusive acid (felsic) - granodiorite,,,FALSE,,FALSE
+BedrockType,,27,gg,Foliated medium to coarse grained - granite gneiss,,,FALSE,,FALSE
+BedrockType,,28,gk,Clastic non-calcareous - medium grained - greywacke,,,FALSE,,FALSE
+BedrockType,,29,gl,Non-foliated medium to coarse grained - granulite,,,FALSE,,FALSE
+BedrockType,,30,gn,Foliated medium to coarse grained - gneiss,,,FALSE,,FALSE
+BedrockType,,31,gr,Intrusive acid (felsic) - granite,,,FALSE,,FALSE
+BedrockType,,32,gy,Precipitates crystalline - non-calcareous - gypsum,,,FALSE,,FALSE
+BedrockType,,33,hb,Non-foliated coarse grained - hornblendite,,,FALSE,,FALSE
+BedrockType,,34,hf,Non-foliated medium to coarse grained - hornfels,,,FALSE,,FALSE
+BedrockType,,35,ia,Intrusive acid (felsic),,,FALSE,,FALSE
+BedrockType,,36,ib,Intrusive basic (mafic),,,FALSE,,FALSE
+BedrockType,,37,ii,Intrusive intermediate,,,FALSE,,FALSE
+BedrockType,,38,ka,Clastic calcareous - medium grained - arkose,,,FALSE,,FALSE
+BedrockType,,39,kb,Clastic calcareous - coarse grained - breccia,,,FALSE,,FALSE
+BedrockType,,40,kc,Clastic calcareous - coarse grained,,,FALSE,,FALSE
+BedrockType,,41,kd,Clastic calcareous - fine grained - mudstone,,,FALSE,,FALSE
+BedrockType,,42,kf,Clastic calcareous - fine grained,,,FALSE,,FALSE
+BedrockType,,43,kg,Clastic calcareous - medium grained - greywacke,,,FALSE,,FALSE
+BedrockType,,44,kh,Clastic calcareous - fine grained - shale,,,FALSE,,FALSE
+BedrockType,,45,km,Clastic calcareous - medium grained,,,FALSE,,FALSE
+BedrockType,,46,kn,Clastic calcareous - coarse grained - conglomerate,,,FALSE,,FALSE
+BedrockType,,47,ks,Clastic calcareous - medium grained - sandstone,,,FALSE,,FALSE
+BedrockType,,48,kz,Clastic calcareous - fine grained - siltstone,,,FALSE,,FALSE
+BedrockType,,49,la,Extrusive recent lava flow,,,FALSE,,FALSE
+BedrockType,,50,lg,Organic carbonaceous - lignite,,,FALSE,,FALSE
+BedrockType,,51,li,Precipitates crystalline - non-calcareous - limonite,,,FALSE,,FALSE
+BedrockType,,52,ls,Precipitates crystalline - calcareous - limestone,,,FALSE,,FALSE
+BedrockType,,53,ma,Organic calcareous - mar,,,FALSE,,FALSE
+BedrockType,,54,mb,Non-foliated calcareous - marble,,,FALSE,,FALSE
+BedrockType,,55,md,Clastic non-calcareous - fine grained - mudstone,,,FALSE,,FALSE
+BedrockType,,56,mi,Foliated coarse grained - migmatite,,,FALSE,,FALSE
+BedrockType,,57,nc,Non-foliated coarse grained,,,FALSE,,FALSE
+BedrockType,,58,nf,Non-foliated fine grained,,,FALSE,,FALSE
+BedrockType,,59,nk,Non-foliated calcareous,,,FALSE,,FALSE
+BedrockType,,60,nm,Non-foliated medium to coarse grained,,,FALSE,,FALSE
+BedrockType,,61,oc,Organic carbonaceous,,,FALSE,,FALSE
+BedrockType,,62,ok,Organic calcareous,,,FALSE,,FALSE
+BedrockType,,63,ph,Foliated fine grained - phylite,,,FALSE,,FALSE
+BedrockType,,64,pk,Precipitates crystalline - calcareous,,,FALSE,,FALSE
+BedrockType,,65,pu,Precipitates crystalline - non-calcareous,,,FALSE,,FALSE
+BedrockType,,66,py,Intrusive basic (mafic) - pyroxenite,,,FALSE,,FALSE
+BedrockType,,67,qb,Extrusive basic (mafic) - quartz basalt,,,FALSE,,FALSE
+BedrockType,,68,qd,Intrusive intermediate - quartz diorite,,,FALSE,,FALSE
+BedrockType,,69,qg,Intrusive basic (mafic) - quartz,,,FALSE,,FALSE
+BedrockType,,70,qm,Intrusive acid (felsic) - quartz monzonite,,,FALSE,,FALSE
+BedrockType,,71,qt,Non-foliated medium to coarse grained - quartzite,,,FALSE,,FALSE
+BedrockType,,72,rh,Extrusive acid (felsic) - rhyolite,,,FALSE,,FALSE
+BedrockType,,73,sc,Foliated medium to coarse grained - schist,,,FALSE,,FALSE
+BedrockType,,74,sh,Clastic non-calcareous - fine grained - shale,,,FALSE,,FALSE
+BedrockType,,75,sl,Foliated fine grained - slate,,,FALSE,,FALSE
+BedrockType,,76,sm,Non-foliated calcareous - serpentine marble,,,FALSE,,FALSE
+BedrockType,,77,sp,Non-foliated fine grained - serpentinite,,,FALSE,,FALSE
+BedrockType,,78,ss,Clastic non-calcareous - medium grained - sandstone,,,FALSE,,FALSE
+BedrockType,,79,sy,Intrusive acid (felsic) - syenite,,,FALSE,,FALSE
+BedrockType,,80,tr,Extrusive acid (felsic) - trachyte,,,FALSE,,FALSE
+BedrockType,,81,tu,Extrusive pyroclastic - tuff,,,FALSE,,FALSE
+BedrockType,,82,tv,Precipitates crystalline - calcareous - travertine,,,FALSE,,FALSE
+BedrockType,,83,uc,Clastic non-calcareous - coarse grained,,,FALSE,,FALSE
+BedrockType,,84,uf,Clastic non-calcareous - fine grained,,,FALSE,,FALSE
+BedrockType,,85,um,Clastic non-calcareous - medium grained,,,FALSE,,FALSE
+BedrockType,,86,vb,Extrusive pyroclastic - volcanic breccia,,,FALSE,,FALSE
+BedrockType,,87,zl,Clastic non-calcareous - fine grained - siltstone,,,FALSE,,FALSE
+BedrockType,,1,,null,,,FALSE,,FALSE
+CoordSystem,,1,,Null,Metadata form,,FALSE,,FALSE
+CoordSystem,,2,UTM,,Metadata form,,FALSE,,FALSE
+CoordSystem,,3,dd.ddd,,Metadata form,,FALSE,,FALSE
+CoordSystem,,4,dd.mm.mmm,,Metadata form,,FALSE,,FALSE
+CoordSystem,,5,dd.mm.ss.s,,Metadata form,,FALSE,,FALSE
+CoordSystem,,6,Other,,Metadata form,,FALSE,,FALSE
+CrownClass,,2,C,codominant,,,FALSE,,FALSE
+CrownClass,,3,D,dominant,,,FALSE,,FALSE
+CrownClass,,4,I,intermediate,,,FALSE,,FALSE
+CrownClass,,1,null,null,,,FALSE,,FALSE
+CrownClass,,5,S,suppressed,,,FALSE,,FALSE
+Cultural1,,1,,null,,,FALSE,,FALSE
+Cultural1,,2,0,Nil,,,FALSE,,FALSE
+Cultural1,,3,1,Poor,,,FALSE,,FALSE
+Cultural1,,5,3,Fair,,,FALSE,,FALSE
+Cultural1,,7,5,Good,,,FALSE,,FALSE
+Cultural1,,8,6,Excellent,,,FALSE,,FALSE
+Cultural1,,4,2,Poor - Fair,,,FALSE,,FALSE
+Cultural1,,6,4,Fair - Good,,,FALSE,,FALSE
+DataQuality,,4,Excellent,Excellent - FS882 Full detail,,,FALSE,E,FALSE
+DataQuality,,2,Fair,Fair - Ground Call / SIVI,,,FALSE,F,FALSE
+DataQuality,,3,Good,Good - FS882 Partial or Lower quality,,,FALSE,G,FALSE
+DataQuality,,1,Poor,"Poor - Visuals, Notes, Low quality",,,FALSE,P,FALSE
+Datum,,1,,Null,Metadata form,,FALSE,,FALSE
+Datum,,2,NAD27,,Metadata form,,FALSE,,FALSE
+Datum,,3,NAD83,,Metadata form,,FALSE,,FALSE
+Datum,,4,Other,,Metadata form,,FALSE,,FALSE
+DistributionCode,,1,,null,,,FALSE,,FALSE
+DistributionCode,,2,1,Rare individual,,,FALSE,,FALSE
+DistributionCode,,3,2,Few individuals (2-5),,,FALSE,,FALSE
+DistributionCode,,4,3,Single Patch,,,FALSE,,FALSE
+DistributionCode,,5,4,Several individuals (>5),,,FALSE,,FALSE
+DistributionCode,,6,5,Few patches (2-5),,,FALSE,,FALSE
+DistributionCode,,7,6,Several patches (>5),,,FALSE,,FALSE
+DistributionCode,,8,7,Continuous well spaced,,,FALSE,,FALSE
+DistributionCode,,9,8,Continuous with gaps,,,FALSE,,FALSE
+DistributionCode,,10,9,Continuous and dense,,,FALSE,,FALSE
+Ecosection,,1,,Null,Ecosection,,TRUE,,FALSE
+Ecosection,,2,ALR,Alsek Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,3,APM,Alaska Panhandle Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,4,BAU,Babine Upland,Ecosection,,TRUE,,FALSE
+Ecosection,,5,BBT,Big Bend Trench,Ecosection,,TRUE,,FALSE
+Ecosection,,6,BOR,Boundary Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,7,BOV,Bowron Valley,Ecosection,,TRUE,,FALSE
+Ecosection,,8,BRR,Border Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,9,BUB,Bulkley Basin,Ecosection,,TRUE,,FALSE
+Ecosection,,10,BUR,Bulkley Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,11,CAB,Cariboo Basin,Ecosection,,TRUE,,FALSE
+Ecosection,,12,CAM,Cariboo Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,13,CAP,Cariboo Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,14,CAR,Cassiar Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,15,CCM,Central Columbia Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,16,CCR,Central Chilcotin Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,17,CHP,Chiltotin Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,18,CLH,Clear Hills,Ecosection,,TRUE,,FALSE
+Ecosection,,19,COC,Crown of the Continent,Ecosection,,TRUE,,FALSE
+Ecosection,,20,CPK,Central Park Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,21,DIE,Dixon Entrance,Ecosection,,TRUE,,FALSE
+Ecosection,,22,EKT,East Kootenay Trench,Ecosection,,TRUE,,FALSE
+Ecosection,,23,EMR,Eastern Muskwa Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,24,EPM,Eastern Purcell Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,25,EPR,Eastern Pacific Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,26,ESM,Eastern Skeena Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,27,ETP,Etsho Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,28,FNL,Fort Nelson Lowland,Ecosection,,TRUE,,FALSE
+Ecosection,,29,FRB,Fraser River Basin,Ecosection,,TRUE,,FALSE
+Ecosection,,30,FRL,Fraser Lowland,Ecosection,,TRUE,,FALSE
+Ecosection,,31,FRR,Front Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,32,GEL,Georgia Lowland,Ecosection,,TRUE,,FALSE
+Ecosection,,33,HAF,Hart Foothills,Ecosection,,TRUE,,FALSE
+Ecosection,,34,HAP,Halfway Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,35,HAR,Hart Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,36,HEL,Hecate Lowland,Ecosection,,TRUE,,FALSE
+Ecosection,,37,HES,Hecate Strait,Ecosection,,TRUE,,FALSE
+Ecosection,,38,HYH,Hyland Highland,Ecosection,,TRUE,,FALSE
+Ecosection,,39,ICR,Icefield Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,40,JDF,Juan de Fuca Strait,Ecosection,,TRUE,,FALSE
+Ecosection,,41,KEM,Kechika Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,42,KIP,Kiskatinaw Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,43,KIR,Kitimat Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,44,LIM,Leeward Island Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,45,LIP,Liard Plain,Ecosection,,TRUE,,FALSE
+Ecosection,,46,LPR,Leeward Pacific Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,47,MAP,Manson Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,48,MCP,McGregor Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,49,MCR,McGillivary Range,Ecosection,,TRUE,,FALSE
+Ecosection,,50,MIR,Missinchinka Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,51,MUF,Muskwa Foothills,Ecosection,,TRUE,,FALSE
+Ecosection,,52,MUP,Muskwa Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,53,NAB,Nass Basin,Ecosection,,TRUE,,FALSE
+Ecosection,,54,NAL,Nanaimo Lowland,Ecosection,,TRUE,,FALSE
+Ecosection,,55,NAR,Nass Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,56,NAU,Nazko Upland,Ecosection,,TRUE,,FALSE
+Ecosection,,57,NCM,Northern Columbia Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,58,NEL,Nechako Lowland,Ecosection,,TRUE,,FALSE
+Ecosection,,59,NEU,Nechako Upland,Ecosection,,TRUE,,FALSE
+Ecosection,,60,NIM,Northern Island Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,61,NOB,Northern Okanagan Basin,Ecosection,,TRUE,,FALSE
+Ecosection,,62,NOH,Northern Okanagan Highland,Ecosection,,TRUE,,FALSE
+Ecosection,,63,NPK,Northern Park Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,64,NPR,Northern Pacific Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,65,NSM,Northern Skeena Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,66,NTU,Northern Thompson Upland,Ecosection,,TRUE,,FALSE
+Ecosection,,67,NWC,Northwestern Cascade Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,68,NWL,Nahwitti Lowland,Ecosection,,TRUE,,FALSE
+Ecosection,,69,OKR,Okanagan Range,Ecosection,,TRUE,,FALSE
+Ecosection,,70,OUF,Outer Fiordland,Ecosection,,TRUE,,FALSE
+Ecosection,,71,PAR,Pavilion Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,72,PAT,Parsnip Trench,Ecosection,,TRUE,,FALSE
+Ecosection,,73,PEF,Peace Foothills,Ecosection,,TRUE,,FALSE
+Ecosection,,74,PEL,Peace Lowland,Ecosection,,TRUE,,FALSE
+Ecosection,,75,PEP,Petitot Plain,Ecosection,,TRUE,,FALSE
+Ecosection,,76,QCL,Queen Charlotte Lowland,Ecosection,,TRUE,,FALSE
+Ecosection,,77,QCS,Queen Charlotte Sound,Ecosection,,TRUE,,FALSE
+Ecosection,,78,QUH,Quesnel Highland,Ecosection,,TRUE,,FALSE
+Ecosection,,79,SBP,Southern Boreal Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,80,SCM,Southern Columbia Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,81,SCR,Southern Chilcotin Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,82,SFH,Selkirk Foothills,Ecosection,,TRUE,,FALSE
+Ecosection,,83,SHH,Shuswap Highland,Ecosection,,TRUE,,FALSE
+Ecosection,,84,SKP,Skidegate Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,85,SOB,Southern Okanagan Basin,Ecosection,,TRUE,,FALSE
+Ecosection,,86,SOG,Strait of Georgia,Ecosection,,TRUE,,FALSE
+Ecosection,,87,SOH,Southern Okanagan Highland,Ecosection,,TRUE,,FALSE
+Ecosection,,88,SOM,Southern Omineca Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,89,SPK,Southern Park Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,90,SPR,Southern Pacific Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,91,SSM,Southern Skeena Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,92,STP,Stikine Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,93,STU,Southern Thompson Upland,Ecosection,,TRUE,,FALSE
+Ecosection,,94,TAB,Tatshenshini Basin,Ecosection,,TRUE,,FALSE
+Ecosection,,95,TAH,Tagish Highland,Ecosection,,TRUE,,FALSE
+Ecosection,,96,TEP,Teslin Plateau,Ecosection,,TRUE,,FALSE
+Ecosection,,97,THB,Thompson Basin,Ecosection,,TRUE,,FALSE
+Ecosection,,98,THH,Tahltan Highland,Ecosection,,TRUE,,FALSE
+Ecosection,,99,TUR,Tuya Range,Ecosection,,TRUE,,FALSE
+Ecosection,,100,UFT,Upper Fraser Trench,Ecosection,,TRUE,,FALSE
+Ecosection,,101,VIS,Vancouver Island Shelf,Ecosection,,TRUE,,FALSE
+Ecosection,,102,WCR,Western Chilcotin Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,103,WCU,Western Chilcotin Upland,Ecosection,,TRUE,,FALSE
+Ecosection,,104,WIM,Windward Island Mountains,Ecosection,,TRUE,,FALSE
+Ecosection,,105,WMR,Western Muskwa Ranges,Ecosection,,TRUE,,FALSE
+Ecosection,,106,WQC,Windward Queen Charlotte Mountains,Ecosection,,TRUE,,FALSE
+EcosysCollectionStandard,,1,,Null,Metadata form,,FALSE,,FALSE
+EcosysCollectionStandard,,2,DEIF 1980,,Metadata form,,FALSE,,FALSE
+EcosysCollectionStandard,,3,DEIF 1990,,Metadata form,,FALSE,,FALSE
+EcosysCollectionStandard,,4,DTE 1998,,Metadata form,,FALSE,,FALSE
+EcosysCollectionStandard,,5,DTE 2010,,Metadata form,,FALSE,,FALSE
+EcosysCollectionStandard,,6,YBIS,,Metadata form,,FALSE,,FALSE
+EcosysCollectionStandard,,7,CHAR,,Metadata form,,FALSE,,FALSE
+EcosysCollectionStandard,,8,Dom,,Metadata form,,FALSE,,FALSE
+EcosysCollectionStandard,,10,Other,,Metadata form,,FALSE,,FALSE
+EcosysCollectionStandard,,9,LMH25,,Metadata form,,FALSE,,FALSE
+Exposure,,1,,Null,Exposure,2,FALSE,,FALSE
+Exposure,,2,AT,Atmospheric toxicity,Exposure,2,FALSE,,FALSE
+Exposure,,3,CA,Cold air drainage,Exposure,2,FALSE,,FALSE
+Exposure,,4,FR,Frost,Exposure,2,FALSE,,FALSE
+Exposure,,5,IN,Insolation,Exposure,2,FALSE,,FALSE
+Exposure,,6,NA,Not Applicable,Exposure,2,FALSE,,FALSE
+Exposure,,7,RN,Localized Rainshadow,Exposure,2,FALSE,,FALSE
+Exposure,,8,SA,Salt spray,Exposure,2,FALSE,,FALSE
+Exposure,,9,SF,Fresh Water Spray,Exposure,2,FALSE,,FALSE
+Exposure,,10,SN,Snow Accumulation,Exposure,2,FALSE,,FALSE
+Exposure,,11,WI,Wind,Exposure,2,FALSE,,FALSE
+Exposure,,12,X,Miscellaneous,Exposure,2,FALSE,,FALSE
+Filter Field List,,2,BedrockGeology1,Bedrock Type,,,FALSE,,FALSE
+Filter Field List,,4,Ecosection,Ecosection,,,FALSE,,FALSE
+Filter Field List,,5,HumusForm,Humus Form,,,FALSE,,FALSE
+Filter Field List,,6,MapUnit,Map Unit,,,FALSE,,FALSE
+Filter Field List,,7,MoistureRegime,SMR,,,FALSE,,FALSE
+Filter Field List,,8,NtsMapSheet,Map Sheet,,,FALSE,,FALSE
+Filter Field List,,9,NutrientRegime,SNR,,,FALSE,,FALSE
+Filter Field List,,10,PlotNumber,Plot Number,,,FALSE,,FALSE
+Filter Field List,,11,SitePlotQuality,Plot Quality,,,FALSE,,FALSE
+Filter Field List,,12,FSRegionDistrict,Region,,,FALSE,,FALSE
+Filter Field List,,13,RootZoneParticleSize,Family Partical Size,,,FALSE,,FALSE
+Filter Field List,,14,SiteDisturbance1,Site Disturbance 1,,,FALSE,,FALSE
+Filter Field List,,15,SiteDisturbance2,Site Disturbance 2,,,FALSE,,FALSE
+Filter Field List,,16,FieldNumber,Site Number,,,FALSE,,FALSE
+Filter Field List,,17,SiteSeries,Site Series,,,FALSE,,FALSE
+Filter Field List,,18,SoilClassGroup,Soil Group,,,FALSE,,FALSE
+Filter Field List,,19,SoilClassSubGroup,Soil Sub Group,,,FALSE,,FALSE
+Filter Field List,,20,SoilDrainage,Drainage Class,,,FALSE,,FALSE
+Filter Field List,,21,StructuralStage,Structural Stage,,,FALSE,,FALSE
+Filter Field List,,22,SubZone,Bio Geo Subzone,,,FALSE,,FALSE
+Filter Field List,,23,SuccessionalStatus,Successional Stage,,,FALSE,,FALSE
+Filter Field List,,25,Zone,Bio Geo Zone,,,FALSE,,FALSE
+FloodingRegimeDur,,1,,null,FloodingRegimeDur,,TRUE,,FALSE
+FloodingRegimeDur,,2,B,Brief,FloodingRegimeDur,,TRUE,,FALSE
+FloodingRegimeDur,,3,D,Diurnal,FloodingRegimeDur,,TRUE,,FALSE
+FloodingRegimeDur,,4,E,Extended,FloodingRegimeDur,,TRUE,,FALSE
+FloodingRegimeDur,,5,M,Moderate,FloodingRegimeDur,,TRUE,,FALSE
+FloodingRegimeDur,,6,P,Permanent,FloodingRegimeDur,,TRUE,,FALSE
+FloodingRegimeDur,,7,S,Semi-permanent (exposed in dry years),FloodingRegimeDur,,TRUE,,FALSE
+FloodingRegimeDur,,8,T,Temporary,FloodingRegimeDur,,TRUE,,FALSE
+FloodingRegimeDur,,9,W,Winter,FloodingRegimeDur,,TRUE,,FALSE
+FloodingRegimeFreq,,1,,null,FloodingRegimeFreq,,TRUE,,FALSE
+FloodingRegimeFreq,,2,A,Annual,FloodingRegimeFreq,,TRUE,,FALSE
+FloodingRegimeFreq,,3,F,Frequent,FloodingRegimeFreq,,TRUE,,FALSE
+FloodingRegimeFreq,,4,O,Occasional,FloodingRegimeFreq,,TRUE,,FALSE
+FloodingRegimeFreq,,5,R,Rare,FloodingRegimeFreq,,TRUE,,FALSE
+FloodingRegimeFreq,,6,X,Never,FloodingRegimeFreq,,TRUE,,FALSE
+FruitFlowerAbundance,,1,,null,,,FALSE,,FALSE
+FruitFlowerAbundance,,2,0,Nil,,,FALSE,,FALSE
+FruitFlowerAbundance,,3,1,Very Low,,,FALSE,,FALSE
+FruitFlowerAbundance,,4,2,Low,,,FALSE,,FALSE
+FruitFlowerAbundance,,5,3,Moderate,,,FALSE,,FALSE
+FruitFlowerAbundance,,6,4,Moderately High,,,FALSE,,FALSE
+FruitFlowerAbundance,,7,5,High,,,FALSE,,FALSE
+FruitFlowerAbundance,,8,6,Excellent,,,FALSE,,FALSE
+GeoMorPro,,1,,Null,,,FALSE,,FALSE
+GeoMorPro,,2,A,Avalanches,,,FALSE,,FALSE
+GeoMorPro,,3,C,Cryoturbation,,,FALSE,,FALSE
+GeoMorPro,,4,D,Deflation,,,FALSE,,FALSE
+GeoMorPro,,5,E,Channeled,,,FALSE,,FALSE
+GeoMorPro,,6,F,Slowmass,,,FALSE,,FALSE
+GeoMorPro,,7,H,Kettle,,,FALSE,,FALSE
+GeoMorPro,,8,I,Irregular channel,,,FALSE,,FALSE
+GeoMorPro,,9,I,Braiding,,,FALSE,,FALSE
+GeoMorPro,,10,J,Anastamosing channel,,,FALSE,,FALSE
+GeoMorPro,,11,K,Karst,,,FALSE,,FALSE
+GeoMorPro,,12,L,Surface seepage,,,FALSE,,FALSE
+GeoMorPro,,13,M,Meandering channels,,,FALSE,,FALSE
+GeoMorPro,,14,N,Nivation,,,FALSE,,FALSE
+GeoMorPro,,15,P,Piping,,,FALSE,,FALSE
+GeoMorPro,,16,R,Rapid mass movement,,,FALSE,,FALSE
+GeoMorPro,,17,S,Solifluction,,,FALSE,,FALSE
+GeoMorPro,,18,U,Inundation,,,FALSE,,FALSE
+GeoMorPro,,19,V,Gully erosion,,,FALSE,,FALSE
+GeoMorPro,,20,W,Washing,,,FALSE,,FALSE
+GeoMorPro,,21,X,Permafrost,,,FALSE,,FALSE
+GeoMorPro,,22,Z,Periglacial processes,,,FALSE,,FALSE
+GeoreferenceMethod,,1,,Null,Metadata form,,FALSE,,FALSE
+GeoreferenceMethod,,2,GPS +/- 10m,,Metadata form,,FALSE,,FALSE
+GeoreferenceMethod,,4,Base-correct,,Metadata form,,FALSE,,FALSE
+GeoreferenceMethod,,5,Pre 2000,,Metadata form,,FALSE,,FALSE
+GeoreferenceMethod,,9,Other,,Metadata form,,FALSE,,FALSE
+GeoreferenceMethod,,3,GPS +/- 300m,,Metadata form,,FALSE,,FALSE
+GeoreferenceMethod,,6,1:10k,,Metadata form,,FALSE,,FALSE
+GeoreferenceMethod,,7,1:50k,,Metadata form,,FALSE,,FALSE
+GeoreferenceMethod,,8,1:250k,,Metadata form,,FALSE,,FALSE
+History,,1,,null,,,FALSE,,FALSE
+History,,2,DB,Disturbance - Wildfire,,,FALSE,,FALSE
+History,,3,DD,Disturbance - Disease,,,FALSE,,FALSE
+History,,4,DF,Disturbance - Flooding,,,FALSE,,FALSE
+History,,5,DI,Disturbance - Insect,,,FALSE,,FALSE
+History,,6,DK,Disturbance - Fume Kill,,,FALSE,,FALSE
+History,,7,DL,Disturbance - Logging,,,FALSE,,FALSE
+History,,8,DS,Disturbance - Slide,,,FALSE,,FALSE
+History,,9,DW,Disturbance - Windthrow,,,FALSE,,FALSE
+History,,10,PB,Site Preparation - Broadcast Burn,,,FALSE,,FALSE
+History,,11,PC,Site Preparation - Chemical,,,FALSE,,FALSE
+History,,12,PG,Site Preparation - Grass Seeded,,,FALSE,,FALSE
+History,,13,PM,Site Preparation - Mechanical,,,FALSE,,FALSE
+History,,14,PMS,Site Preparation - Mechanical & Spot Burn,,,FALSE,,FALSE
+History,,15,PS,Site Preparation - Spot Burn,,,FALSE,,FALSE
+History,,16,RP,Regeneration - Planted,,,FALSE,,FALSE
+History,,17,TF,Stand Tending - Fertilization,,,FALSE,,FALSE
+History,,18,TJ,Stand Tending - Juvenile Spacing,,,FALSE,,FALSE
+History,,19,TM,Stand Tending - Mistletoe Control,,,FALSE,,FALSE
+History,,20,TP,Stand Tending - Pruning,,,FALSE,,FALSE
+History,,21,TR,Stand Tending - Conifer Release,,,FALSE,,FALSE
+History,,22,TS,Stand Tending - Sanitation Spacing,,,FALSE,,FALSE
+History,,23,TT,Stand Tending - Commercial Thinning,,,FALSE,,FALSE
+History,,24,TW,Stand Tending - Brushing & Weeding,,,FALSE,,FALSE
+HumusForm,,21,PD,Paramoder,HumusForm,,TRUE,,FALSE
+HumusForm,,1,,Null,HumusForm,,TRUE,,FALSE
+HumusForm,,2,D,Moder,HumusForm,,TRUE,,FALSE
+HumusForm,,3,FR,Fibrimor,HumusForm,,TRUE,,FALSE
+HumusForm,,4,HR,Hemimor,HumusForm,,TRUE,,FALSE
+HumusForm,,5,L,Mull,HumusForm,,TRUE,,FALSE
+HumusForm,,6,LD,Lignomoder,HumusForm,,TRUE,,FALSE
+HumusForm,,7,LR,Lignomor,HumusForm,,TRUE,,FALSE
+HumusForm,,8,MD,Mullmoder,HumusForm,,TRUE,,FALSE
+HumusForm,,9,MR,Mesimor,HumusForm,,TRUE,,FALSE
+HumusForm,,10,R,Mor,HumusForm,,TRUE,,FALSE
+HumusForm,,11,RD,Mormoder,HumusForm,,TRUE,,FALSE
+HumusForm,,12,RR,Resimor,HumusForm,,TRUE,,FALSE
+HumusForm,,13,SD,Saprimoder,HumusForm,,TRUE,,FALSE
+HumusForm,,14,TD,Leptomoder,HumusForm,,TRUE,,FALSE
+HumusForm,,15,UR,Humimor,HumusForm,,TRUE,,FALSE
+HumusForm,,16,VL,Vermimull,HumusForm,,TRUE,,FALSE
+HumusForm,,17,YD,Hydromoder,HumusForm,,TRUE,,FALSE
+HumusForm,,18,YL,Hydromull,HumusForm,,TRUE,,FALSE
+HumusForm,,19,YR,Hydromor,HumusForm,,TRUE,,FALSE
+HumusForm,,20,ZL,Rhizomull,HumusForm,,TRUE,,FALSE
+HumusForm,,22,PR,Paramor,HumusForm,,TRUE,,FALSE
+HumusForm,,23,PL,Paramull,HumusForm,,TRUE,,FALSE
+HumusForm,,24,X,Not Present,HumusForm,,TRUE,,FALSE
+HumusFormPhase,,1,,Null,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,2,an,Andic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,3,ca,Calcic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,4,ch,Charcic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,5,cl,Clastic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,6,co,Compactic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,7,cs,Crustic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,8,cy,Cryic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,9,gr,Granuic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,10,hi,Histic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,11,la,Lammic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,12,li,Lignic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,13,me,Melic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,14,mi,Mineric,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,15,my,Mycic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,16,pa,Pachic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,17,re,Resic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,18,rh,Rhizic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,19,te,Tenuic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,20,tu,Turbic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,21,us,Ustic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,22,vl,Velic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,23,vm,Vermic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,24,xy,Xylic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,25,ty,Typic,HumusFormPhase,,FALSE,,FALSE
+HumusFormPhase,,26,xe,Xeric,HumusFormPhase,,FALSE,,FALSE
+HumusHorizon,,1,,null,,,FALSE,,FALSE
+HumusHorizon,,2,F,terrestrial master organic horizon,,,FALSE,,FALSE
+HumusHorizon,,3,Fa,amphi- intergrade between Fm &Fz,,,FALSE,,FALSE
+HumusHorizon,,4,Fm,mycogenous F,,,FALSE,,FALSE
+HumusHorizon,,5,Fz,zoogenous F,,,FALSE,,FALSE
+HumusHorizon,,6,H,terrestrial master H-horizon,,,FALSE,,FALSE
+HumusHorizon,,7,Hh,well-humified,,,FALSE,,FALSE
+HumusHorizon,,8,Hr,residual,,,FALSE,,FALSE
+HumusHorizon,,9,Hydric,water layer in organic soils,,,FALSE,,FALSE
+HumusHorizon,,10,Hz,zoological,,,FALSE,,FALSE
+HumusHorizon,,11,L,terrestrial master organic horizon,,,FALSE,,FALSE
+HumusHorizon,,12,Lithic,Bedrock in organic soils,,,FALSE,,FALSE
+HumusHorizon,,13,Ln,newly accreted,,,FALSE,,FALSE
+HumusHorizon,,14,Lv,initial decay,,,FALSE,,FALSE
+HumusHorizon,,15,O,semi-terrestrial or wetland master organic horizon,,,FALSE,,FALSE
+HumusHorizon,,16,Oco,coprogenous earch,,,FALSE,,FALSE
+HumusHorizon,,17,Of,fibric,,,FALSE,,FALSE
+HumusHorizon,,18,Oh,humic,,,FALSE,,FALSE
+HumusHorizon,,19,Om,mesic,,,FALSE,,FALSE
+HumusHorizon,,20,S,living bryophytes,,,FALSE,,FALSE
+HumuspHMethod,,2,0,pH meter for groundwater sample,,,FALSE,,FALSE
+HumuspHMethod,,3,1,Bromothymol blue,,,FALSE,,FALSE
+HumuspHMethod,,4,2,Cresol red,,,FALSE,,FALSE
+HumuspHMethod,,5,3,Hellige-Truog,,,FALSE,,FALSE
+HumuspHMethod,,6,4,Lamotte-Morgan,,,FALSE,,FALSE
+HumuspHMethod,,7,5,pH meter (1:1 H2O),,,FALSE,,FALSE
+HumuspHMethod,,8,6,pH meter (0.1 M CaCl2),,,FALSE,,FALSE
+HumuspHMethod,,9,7,Phenol red,,,FALSE,,FALSE
+HumuspHMethod,,10,8,Soiltex,,,FALSE,,FALSE
+HumuspHMethod,,11,9,Thymol blue,,,FALSE,,FALSE
+HumuspHMethod,,12,10,pHydrion,,,FALSE,,FALSE
+HumuspHMethod,,13,11,Litmuspaper,,,FALSE,,FALSE
+HumuspHMethod,,1,,null,,,FALSE,,FALSE
+HumusStructureDegree,,1,,null,,,FALSE,,FALSE
+HumusStructureDegree,,2,M,Moderate,,,FALSE,,FALSE
+HumusStructureDegree,,3,S,Strong,,,FALSE,,FALSE
+HumusStructureDegree,,4,W,Weak,,,FALSE,,FALSE
+HumusStructureKind,,1,,null,,,FALSE,,FALSE
+HumusStructureKind,,2,BL,Blocky,,,FALSE,,FALSE
+HumusStructureKind,,3,CM,Compact matted,,,FALSE,,FALSE
+HumusStructureKind,,4,ER,Erect,,,FALSE,,FALSE
+HumusStructureKind,,5,GR,Granular,,,FALSE,,FALSE
+HumusStructureKind,,6,MA,Massive,,,FALSE,,FALSE
+HumusStructureKind,,7,NM,Non-compact matted,,,FALSE,,FALSE
+HumusStructureKind,,8,RC,Recumbent,,,FALSE,,FALSE
+HumusStructureKind,,9,SP,Single particle,,,FALSE,,FALSE
+HydrogeoSubsystem,,1,,Null,,,FALSE,,FALSE
+HydrogeoSubsystem,,2,a,Alluvial,,,FALSE,,FALSE
+HydrogeoSubsystem,,3,bs,Blanket slope,,,FALSE,,FALSE
+HydrogeoSubsystem,,4,cb,Closed basin,,,FALSE,,FALSE
+HydrogeoSubsystem,,5,h,Headwater,,,FALSE,,FALSE
+HydrogeoSubsystem,,6,lb,Linked basin,,,FALSE,,FALSE
+HydrogeoSubsystem,,7,lh,Linked hollow,,,FALSE,,FALSE
+HydrogeoSubsystem,,8,ls,Lobe slope,,,FALSE,,FALSE
+HydrogeoSubsystem,,9,ob,Overflow basin,,,FALSE,,FALSE
+HydrogeoSubsystem,,10,oh,Overflow hollow,,,FALSE,,FALSE
+HydrogeoSubsystem,,11,t,Transport,,,FALSE,,FALSE
+HydrogeoSubsystem,,12,tb,Terminal basin,,,FALSE,,FALSE
+HydrogeoSubsystem,,13,ts,Toe slope,,,FALSE,,FALSE
+HydrogeoSystem,,1,,Null,,,FALSE,,FALSE
+HydrogeoSystem,,2,E,Estuarine,,,FALSE,,FALSE
+HydrogeoSystem,,3,F,Fluvial,,,FALSE,,FALSE
+HydrogeoSystem,,4,L,Lacustrine,,,FALSE,,FALSE
+HydrogeoSystem,,5,M,Marine,,,FALSE,,FALSE
+HydrogeoSystem,,6,P,Palustrine,,,FALSE,,FALSE
+HydrogeoSystem,,7,U,Upland,,,FALSE,,FALSE
+InvSpecies,,1,,null,,,FALSE,,FALSE
+InvSpecies,,2,B,Balsam,,,FALSE,,FALSE
+InvSpecies,,3,F,Fir,,,FALSE,,FALSE
+InvSpecies,,4,H,Hemlock,,,FALSE,,FALSE
+InvSpecies,,5,P,Pine,,,FALSE,,FALSE
+InvSpecies,,6,S,Spruce,,,FALSE,,FALSE
+MensurationMethod,,1,,Null,Metadata form,,FALSE,,FALSE
+MensurationMethod,,2,Fixed,,Metadata form,,FALSE,,FALSE
+MensurationMethod,,3,Prism,,Metadata form,,FALSE,,FALSE
+MensurationMethod,,4,Paired Prisim,,Metadata form,,FALSE,,FALSE
+MensurationMethod,,5,Other,,Metadata form,,FALSE,,FALSE
+MensurationType,,0,,Null,FullCruiseCard,,FALSE,,FALSE
+MensurationType,,1,Cruise Plot,Cruise Plot,FullCruiseCard,,FALSE,,FALSE
+MensurationType,,2,CWD Plot,CWD Plot,FullCruiseCard,,FALSE,,FALSE
+MensurationType,,3,Wildlife Plot,Wildlife Plot,FullCruiseCard,,FALSE,,FALSE
+MensurationType,,4,Informal Plot,Informal Plot,FullCruiseCard,,FALSE,,FALSE
+MensurationType,,5,Site Index Plot,Site Index Plot,FullCruiseCard,,FALSE,,FALSE
+MesoSlopePosition,,1,,Null,MesoSlopePosition,,TRUE,,FALSE
+MesoSlopePosition,,3,CR,Crest,MesoSlopePosition,,TRUE,,FALSE
+MesoSlopePosition,,4,DP,Depression,MesoSlopePosition,,TRUE,,FALSE
+MesoSlopePosition,,5,GU,Gully,MesoSlopePosition,,TRUE,,FALSE
+MesoSlopePosition,,6,LV,Level,MesoSlopePosition,,TRUE,,FALSE
+MesoSlopePosition,,7,LW,Lower slope,MesoSlopePosition,,TRUE,,FALSE
+MesoSlopePosition,,8,MD,Mid slope,MesoSlopePosition,,TRUE,,FALSE
+MesoSlopePosition,,9,TO,Toe,MesoSlopePosition,,TRUE,,FALSE
+MesoSlopePosition,,10,UP,Upper slope,MesoSlopePosition,,TRUE,,FALSE
+MineralSoilTexture,,0,,Null,RootZoneTexture,,FALSE,,FALSE
+MineralSoilTexture,,1,Sndy,Sandy,RootZoneTexture,,FALSE,,FALSE
+MineralSoilTexture,,2,Lmy,Loamy,RootZoneTexture,,FALSE,,FALSE
+MineralSoilTexture,,3,Slty,Silty,RootZoneTexture,,FALSE,,FALSE
+MineralSoilTexture,,4,Cly,Clayey,RootZoneTexture,,FALSE,,FALSE
+MineralStructureClass,,1,,null,,,FALSE,,FALSE
+MineralStructureClass,,2,c,coarse,,,FALSE,,FALSE
+MineralStructureClass,,3,f,fine,,,FALSE,,FALSE
+MineralStructureClass,,4,m,medium,,,FALSE,,FALSE
+MineralStructureClass,,5,vc,verycoarse,,,FALSE,,FALSE
+MineralStructureClass,,6,vf,very fine,,,FALSE,,FALSE
+MineralStructureKind,,1,,null,,,FALSE,,FALSE
+MineralStructureKind,,2,ABK,angular blocky,,,FALSE,,FALSE
+MineralStructureKind,,3,COL,columnar,,,FALSE,,FALSE
+MineralStructureKind,,4,DCY,cloddy,,,FALSE,,FALSE
+MineralStructureKind,,5,GR,granular,,,FALSE,,FALSE
+MineralStructureKind,,6,MA,massive,,,FALSE,,FALSE
+MineralStructureKind,,7,PL,platy,,,FALSE,,FALSE
+MineralStructureKind,,8,PR,prismatic,,,FALSE,,FALSE
+MineralStructureKind,,9,SBK,subangular blocky,,,FALSE,,FALSE
+MineralStructureKind,,10,SGR,single grain,,,FALSE,,FALSE
+MinSoilAspect,,2,1,Matrix moist,,,FALSE,,FALSE
+MinSoilAspect,,3,2,Matrix dry,,,FALSE,,FALSE
+MinSoilAspect,,4,3,Exped moist,,,FALSE,,FALSE
+MinSoilAspect,,5,4,Exped dry,,,FALSE,,FALSE
+MinSoilAspect,,6,5,Inped moist,,,FALSE,,FALSE
+MinSoilAspect,,7,6,Inped dry,,,FALSE,,FALSE
+MinSoilAspect,,8,7,Crushed moist,,,FALSE,,FALSE
+MinSoilAspect,,9,8,Crush dry,,,FALSE,,FALSE
+MinSoilAspect,,10,9,Natural wet/reduced,,,FALSE,,FALSE
+MinSoilAspect,,11,10,Natural wet/oxidized,,,FALSE,,FALSE
+MinSoilAspect,,12,11,Pressed wet/reduced,,,FALSE,,FALSE
+MinSoilAspect,,13,12,Pressed wet/oxidized,,,FALSE,,FALSE
+MinSoilAspect,,14,13,Rubbed wet/oxidized,,,FALSE,,FALSE
+MinSoilAspect,,15,14,Rubbed dry,,,FALSE,,FALSE
+MinSoilAspect,,1,,null,,,FALSE,,FALSE
+MoistureRegime,,2,0,VX; very xeric,MoistureRegime,,TRUE,,FALSE
+MoistureRegime,,3,1,X; xeric,MoistureRegime,,TRUE,,FALSE
+MoistureRegime,,4,2,SX; subxeric,MoistureRegime,,TRUE,,FALSE
+MoistureRegime,,5,3,SM; submesic,MoistureRegime,,TRUE,,FALSE
+MoistureRegime,,6,4,M; mesic,MoistureRegime,,TRUE,,FALSE
+MoistureRegime,,7,5,SHG; subhygric,MoistureRegime,,TRUE,,FALSE
+MoistureRegime,,8,6,HG; hygric,MoistureRegime,,TRUE,,FALSE
+MoistureRegime,,9,7,SHD; subhydric,MoistureRegime,,TRUE,,FALSE
+MoistureRegime,,10,8,HD; hydric,MoistureRegime,,TRUE,,FALSE
+MoistureRegime,,1,,Null,MoistureRegime,,TRUE,,FALSE
+MycelAbundance,,1,,null,,,FALSE,,FALSE
+MycelAbundance,,2,A,Abundant,,,FALSE,,FALSE
+MycelAbundance,,3,C,Common,,,FALSE,,FALSE
+MycelAbundance,,4,F,Few,,,FALSE,,FALSE
+MycelAbundance,,5,X,None,,,FALSE,,FALSE
+NutrientRegime,,1,,Null,NutrientRegime,,TRUE,,FALSE
+NutrientRegime,,2,A,Very poor (oligotrophic),NutrientRegime,,TRUE,,FALSE
+NutrientRegime,,3,B,Poor (submesotrophic),NutrientRegime,,TRUE,,FALSE
+NutrientRegime,,4,C,Medium (mesotrophic),NutrientRegime,,TRUE,,FALSE
+NutrientRegime,,5,D,Rich (permesotrophic),NutrientRegime,,TRUE,,FALSE
+NutrientRegime,,6,E,Very rich (eutrophic),NutrientRegime,,TRUE,,FALSE
+NutrientRegime,,7,F,Excess Saline (Hypereutrophic),NutrientRegime,,TRUE,,FALSE
+PhenologyCodeGen,,1,,"Trees, shrubs, and herbs",,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",2,0,Without blossom buds,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",3,1,Blossom buds recognizable,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",4,2,Blossom buds strongly swollen,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",5,3,Shortly before flowering,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",6,4,Beginning flowering,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",7,5,In bloom up to 25%,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",8,6,In bloom up to 50%,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",9,7,Full bloom,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",10,8,Fading,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",11,9,Completely faded,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",12,10,Bearing green fruit,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",13,11,Bearing ripe fruit,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",14,12,Bearing overripe fruit,,,FALSE,,FALSE
+PhenologyCodeGen,"Trees, shrubs, and herbs",15,13,Fruit or seed dispersal,,,FALSE,,FALSE
+PhenologyCodeGen,,16,,Grasses,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,17,0,Without recognizable infloresence,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,18,1,"Inflorescence recognizable, closed",,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,19,2,Inflorescence partly visible,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,20,3,"Inflorescence fully visible, not unfolded",,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,21,4,Inflorescence unfolded,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,22,5,First blooms pollenizing,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,23,6,Up to 50% pollenized,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,24,7,Full bloom,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,25,8,Fading,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,26,9,Fully faded,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,27,10,Bearing fruit,,,FALSE,,FALSE
+PhenologyCodeGen,Grasses,28,11,Fruit or seed dispersal,,,FALSE,,FALSE
+PhenologyCodeGen,,29,,Ferns,,,FALSE,,FALSE
+PhenologyCodeGen,Ferns,30,0,Sori absent,,,FALSE,,FALSE
+PhenologyCodeGen,Ferns,31,1,"Sori green, forming",,,FALSE,,FALSE
+PhenologyCodeGen,Ferns,32,2,"Sori mature, darker, drier",,,FALSE,,FALSE
+PhenologyCodeGen,Ferns,33,3,"Sori depressing, strobili forming in lycopodium",,,FALSE,,FALSE
+phenologyCodeVeg,,1,,Deciduous trees or shrubs,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,2,0,Closed bud,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,3,1,Buds with green tips,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,4,2,"Green leaf-out, but not unfolded",,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,5,3,Leaf unfolding up to 25%,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,6,4,Leaf unfolding up to 50%,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,7,5,Leaf unfolding up to 75%,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,8,6,Full leaf unfolding,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,9,7,First leaves turned yellow,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,10,8,Leaf yellowing up to 50%,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,11,9,Leaf yellowing over 50%,,,FALSE,,FALSE
+phenologyCodeVeg,Deciduous trees or shrubs,12,10,0 Bare,,,FALSE,,FALSE
+phenologyCodeVeg,,13,,Conifers,,,FALSE,,FALSE
+phenologyCodeVeg,Conifers,14,0,Closed bud,,,FALSE,,FALSE
+phenologyCodeVeg,Conifers,15,1,Swollen bud,,,FALSE,,FALSE
+phenologyCodeVeg,Conifers,16,2,Split bud,,,FALSE,,FALSE
+phenologyCodeVeg,Conifers,17,3,Shoot capped,,,FALSE,,FALSE
+phenologyCodeVeg,Conifers,18,4,Shoot elongated,,,FALSE,,FALSE
+phenologyCodeVeg,Conifers,19,5,"Shoot full length, lighter green",,,FALSE,,FALSE
+phenologyCodeVeg,Conifers,20,6,"Shoot mature, equally green",,,FALSE,,FALSE
+phenologyCodeVeg,,21,,Herbs,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,22,0,Without shoots above ground,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,23,1,Shoots without unfolded leaves,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,24,2,First leaf unfolded,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,25,3,2 or 3 leaves unfolded,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,26,4,Several leaves unfold,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,27,5,Almost all leaves unf,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,28,6,Plant fully developed,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,29,7,Stem and/or first leaves fading,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,30,8,Yellowing up to 50%,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,31,9,Yellowing over 50%,,,FALSE,,FALSE
+phenologyCodeVeg,Herbs,32,10,Dead,,,FALSE,,FALSE
+phenologyCodeVeg,,33,,Grasses,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,34,0,Without shoots above ground,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,35,1,Shoots without unfolded leaves,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,36,2,First leaf unfolded,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,37,3,2 or 3 leaves unfolded,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,38,4,Beginning of development of blades of grass,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,39,5,Blades partly formed,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,40,6,Plant fully developed,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,41,7,Blades and/or first leaves turning yellow,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,42,8,Yellowing up to 50%,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,43,9,Yellowing over 50%,,,FALSE,,FALSE
+phenologyCodeVeg,Grasses,44,10,Dead,,,FALSE,,FALSE
+phenologyCodeVeg,,45,,Ferns,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,46,0,Without shoots above ground,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,47,1,Rolled fronds above ground,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,48,2,First frond unfolded,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,49,3,2 or 3 fronds unfolded,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,50,4,Several fronds unfolded,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,51,5,Almost all fronds unfolded,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,52,6,Plant fully developed,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,53,7,First fronds fading,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,54,8,Yellowing up to 50%,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,55,9,Yellowing over 50%,,,FALSE,,FALSE
+phenologyCodeVeg,Ferns,56,10,Dead,,,FALSE,,FALSE
+PlotMethod,,1,,Null,Metadata form,,FALSE,,FALSE
+PlotMethod,,2,20x20,,Metadata form,,FALSE,,FALSE
+PlotMethod,,3,Nested,,Metadata form,,FALSE,,FALSE
+PlotMethod,,4,1x1,,Metadata form,,FALSE,,FALSE
+PlotMethod,,5,Transect,,Metadata form,,FALSE,,FALSE
+PlotMethod,,6,Frame,,Metadata form,,FALSE,,FALSE
+PlotMethod,,7,Other,,Metadata form,,FALSE,,FALSE
+PlotQualitySite,,1,NA,null,,,FALSE,,FALSE
+PlotQualitySite,,2,Excellent,Excellent - FS882 Full detail,,,FALSE,E,FALSE
+PlotQualitySite,,4,Fair,Fair - Ground Call / SIVI,,,FALSE,F,FALSE
+PlotQualitySite,,3,Good,Good - FS882 Partial or Lower quality,,,FALSE,G,FALSE
+PlotQualitySite,,5,Poor,"Poor - Visuals, Notes, Low quality",,,FALSE,P,FALSE
+PlotType,,5,CHARS,CHARS,,,FALSE,,FALSE
+PlotType,,1,Ground,Ground,,,FALSE,,FALSE
+PlotType,,2,Visual,Visual,,,FALSE,,FALSE
+PlotType,,3,Note,Note,,,FALSE,,FALSE
+PlotType,,4,FS882,FS882,,,FALSE,,FALSE
+PlotType,,6,Other,Other,,,FALSE,,FALSE
+ProjectType,,1,,Null,Metadata form,,FALSE,,FALSE
+ProjectType,,2,BEC,Plots collected for development of the Classification,Metadata form,,FALSE,,FALSE
+ProjectType,,3,TEM,Plots collected for a Terrestrial Ecosystem Map project,Metadata form,,FALSE,,FALSE
+ProjectType,,4,SIBEC,Plots for Site Index by Site Series or Grow & Yield,Metadata form,,FALSE,,FALSE
+ProjectType,,10,Other,,Metadata form,,FALSE,,FALSE
+ProjectType,,5,Monitoring,Plots established for repeated measurements,Metadata form,,FALSE,,FALSE
+ProjectType,,6,PEM,Plots collected for a Predictive Ecosystem Map project,Metadata form,,FALSE,,FALSE
+ProjectType,,8,Thesis,Plots collected for academic research,Metadata form,,FALSE,,FALSE
+ProjectType,,9,VRI,Vegetation Resources Inventory or Forest Cover,Metadata form,,FALSE,,FALSE
+ProjectType,,7,Research,Plots established as part of research trials,Metadata form,,FALSE,,FALSE
+RealmClass,,1,,null,RealmClass,,TRUE,,FALSE
+RealmClass,,2,Af,Alpine - Fellfield,RealmClass,,TRUE,,FALSE
+RealmClass,,3,Ag,Alpine - Grassland,RealmClass,,TRUE,,FALSE
+RealmClass,,4,Ah,Alpine - Heather,RealmClass,,TRUE,,FALSE
+RealmClass,,5,Am,Alpine - Meadow,RealmClass,,TRUE,,FALSE
+RealmClass,,6,As,Alpine - Snowbed/Nivation,RealmClass,,TRUE,,FALSE
+RealmClass,,7,At,Alpine - Tundra,RealmClass,,TRUE,,FALSE
+RealmClass,,8,Az,Alpine - Zooclimax,RealmClass,,TRUE,,FALSE
+RealmClass,,9,Bb,Beachland - Typic,RealmClass,,TRUE,,FALSE
+RealmClass,,10,Br,Beachland - Headland,RealmClass,,TRUE,,FALSE
+RealmClass,,11,Ed,Estuarine Meadow,RealmClass,,TRUE,,FALSE
+RealmClass,,12,Em,Estuarine Marsh,RealmClass,,TRUE,,FALSE
+RealmClass,,13,Es,Estuarine Swamp,RealmClass,,TRUE,,FALSE
+RealmClass,,14,Et,Estuarine Tidal Flat,RealmClass,,TRUE,,FALSE
+RealmClass,,15,Fa,Flood - Active Channel,RealmClass,,TRUE,,FALSE
+RealmClass,,16,Ff,Flood Fringe,RealmClass,,TRUE,,FALSE
+RealmClass,,17,Fh,Flood Highbench,RealmClass,,TRUE,,FALSE
+RealmClass,,18,Fl,Flood Lowbench,RealmClass,,TRUE,,FALSE
+RealmClass,,19,Fm,Flood Midbench,RealmClass,,TRUE,,FALSE
+RealmClass,,20,Ga,Grassland - Alkaline/Saline Meadow,RealmClass,,TRUE,,FALSE
+RealmClass,,21,Gb,Grassland - Brushland,RealmClass,,TRUE,,FALSE
+RealmClass,,22,Gg,Grassland - typic,RealmClass,,TRUE,,FALSE
+RealmClass,,23,Gs,Grassland - Shrub-steppe,RealmClass,,TRUE,,FALSE
+RealmClass,,24,Hs,Hydrogenic - Spring Seepage,RealmClass,,TRUE,,FALSE
+RealmClass,,25,Hv,Hydrogenic - Vernal Pool,RealmClass,,TRUE,,FALSE
+RealmClass,,26,Hw,Hydrogenic - Waterfall Sprayzone,RealmClass,,TRUE,,FALSE
+RealmClass,,27,Rc,Rock - Cliff,RealmClass,,TRUE,,FALSE
+RealmClass,,28,Rd,Rock - Dune,RealmClass,,TRUE,,FALSE
+RealmClass,,29,Rl,Rock - Lava Flow,RealmClass,,TRUE,,FALSE
+RealmClass,,30,Ro,Rock - Outcrop,RealmClass,,TRUE,,FALSE
+RealmClass,,31,Rt,Rock - Talus,RealmClass,,TRUE,,FALSE
+RealmClass,,32,Sc,Shrub - Shrubland,RealmClass,,TRUE,,FALSE
+RealmClass,,33,Sk,Shrub - Krummholz,RealmClass,,TRUE,,FALSE
+RealmClass,,34,Vh,Avalanche - Herb Meadow,RealmClass,,TRUE,,FALSE
+RealmClass,,35,Vs,Avalanche - Shrub Thicket,RealmClass,,TRUE,,FALSE
+RealmClass,,36,Vt,Avalanche - Treed,RealmClass,,TRUE,,FALSE
+RealmClass,,37,Wa,Wetland - Alpine,RealmClass,,TRUE,,FALSE
+RealmClass,,38,Wb,Wetland - Bog,RealmClass,,TRUE,,FALSE
+RealmClass,,39,Wf,Wetland - Fen,RealmClass,,TRUE,,FALSE
+RealmClass,,40,Wm,Wetland - Marsh,RealmClass,,TRUE,,FALSE
+RealmClass,,41,Ws,Wetland - Swamp,RealmClass,,TRUE,,FALSE
+RealmClass,,42,Ww,Wetland - ShallowWater,RealmClass,,TRUE,,FALSE
+RealmClass,,43,Xa,Anthropogenic Disclimax,RealmClass,,TRUE,,FALSE
+RealmClass,,44,Xv,Vegetation Disclimax,RealmClass,,TRUE,,FALSE
+RealmClass,,45,Xz,Zoogenic Disclimax,RealmClass,,TRUE,,FALSE
+Region,,0,,Null,FSRegionDistrict,,TRUE,,FALSE
+Region,,1,RCB.DCC,Cariboo-Chilcotin,FSRegionDistrict,,TRUE,,FALSE
+Region,,2,RCB.DMH,100 Mile House,FSRegionDistrict,,TRUE,,FALSE
+Region,,3,RCB.DQU,Quesnel,FSRegionDistrict,,TRUE,,FALSE
+Region,,4,RKB.DRM,Rocky Mountain,FSRegionDistrict,,TRUE,,FALSE
+Region,,5,RKB.DSE,Selkirk,FSRegionDistrict,,TRUE,,FALSE
+Region,,6,RNO.DFN,Fort Nelson,FSRegionDistrict,,TRUE,,FALSE
+Region,,7,RNO.DPC,Peace,FSRegionDistrict,,TRUE,,FALSE
+Region,,8,ROM.DJA,Fort St. James,FSRegionDistrict,,TRUE,,FALSE
+Region,,9,ROM.DMK,Mackenzie,FSRegionDistrict,,TRUE,,FALSE
+Region,,10,ROM.DPG,Prince George,FSRegionDistrict,,TRUE,,FALSE
+Region,,11,ROM.DVA,Vanderhoof,FSRegionDistrict,,TRUE,,FALSE
+Region,,12,RSC.DCK,Chilliwack,FSRegionDistrict,,TRUE,,FALSE
+Region,,13,RSC.DSC,Sunshine Coast,FSRegionDistrict,,TRUE,,FALSE
+Region,,14,RSC.DSQ,Sea to Sky,FSRegionDistrict,,TRUE,,FALSE
+Region,,15,RSK.DKM,Coast Mountains,FSRegionDistrict,,TRUE,,FALSE
+Region,,16,RSK.DND,Nadina,FSRegionDistrict,,TRUE,,FALSE
+Region,,17,RSK.DSS,Skeena Stikine,FSRegionDistrict,,TRUE,,FALSE
+Region,,18,RTO.DCS,Cascades,FSRegionDistrict,,TRUE,,FALSE
+Region,,19,RTO.DKA,Thompson Rivers,FSRegionDistrict,,TRUE,,FALSE
+Region,,20,RTO.DOS,Okanagan Shuswap,FSRegionDistrict,,TRUE,,FALSE
+Region,,21,RWC.DCR,Campbell River,FSRegionDistrict,,TRUE,,FALSE
+Region,,22,RWC.DNI,North Island - Central Coast,FSRegionDistrict,,TRUE,,FALSE
+Region,,23,RWC.DHG,Haida Gwaii,FSRegionDistrict,,TRUE,,FALSE
+Region,,24,RWC.DSI,South Island,FSRegionDistrict,,TRUE,,FALSE
+RootAbundance,,1,,null,,,FALSE,,FALSE
+RootAbundance,,2,A,Abundant,,,FALSE,,FALSE
+RootAbundance,,3,F,Few,,,FALSE,,FALSE
+RootAbundance,,4,P,Plentiful,,,FALSE,,FALSE
+RootAbundance,,5,X,None,,,FALSE,,FALSE
+RootRestrictingType,,5,N,no root restriction evident,RootRestrictingType,,TRUE,,FALSE
+RootRestrictingType,,9,Z,permafrost,RootRestrictingType,,TRUE,,FALSE
+RootRestrictingType,,1,,null,RootRestrictingType,,TRUE,,FALSE
+RootRestrictingType,,2,C,strongly cemented horizon,RootRestrictingType,,TRUE,,FALSE
+RootRestrictingType,,3,K,compacted morainal material,RootRestrictingType,,TRUE,,FALSE
+RootRestrictingType,,4,L,lithic contact,RootRestrictingType,,TRUE,,FALSE
+RootRestrictingType,,6,P,clay pan or restriction due to fines,RootRestrictingType,,TRUE,,FALSE
+RootRestrictingType,,7,W,excessive moisture,RootRestrictingType,,TRUE,,FALSE
+RootRestrictingType,,8,X,excessive accumulations of chemicals,RootRestrictingType,,TRUE,,FALSE
+RootSize,,1,,null,,,FALSE,,FALSE
+RootSize,,2,C,Coarse,,,FALSE,,FALSE
+RootSize,,3,F,Fine,,,FALSE,,FALSE
+RootSize,,4,K,Very coarse,,,FALSE,,FALSE
+RootSize,,5,M,Medium,,,FALSE,,FALSE
+RootSize,,6,V,Very fine,,,FALSE,,FALSE
+RootZoneParticleSize,,1,,Null,,,FALSE,,FALSE
+RootZoneParticleSize,,2,A,Ashy,,,FALSE,,FALSE
+RootZoneParticleSize,,3,AS,Ashey-skeletal,,,FALSE,,FALSE
+RootZoneParticleSize,,4,C,Clayey,,,FALSE,,FALSE
+RootZoneParticleSize,,5,CI,Cindery,,,FALSE,,FALSE
+RootZoneParticleSize,,6,CL,Coarse-loamy,,,FALSE,,FALSE
+RootZoneParticleSize,,7,CLS,Coarse loamy-skeletal,,,FALSE,,FALSE
+RootZoneParticleSize,,8,CS,Clayey-skeletal,,,FALSE,,FALSE
+RootZoneParticleSize,,9,CSI,Coarse-silty,,,FALSE,,FALSE
+RootZoneParticleSize,,10,F,Fragmental,,,FALSE,,FALSE
+RootZoneParticleSize,,11,FC,Fine-clayey,,,FALSE,,FALSE
+RootZoneParticleSize,,12,FL,Fine-loamy,,,FALSE,,FALSE
+RootZoneParticleSize,,13,FLS,Fine loamy-skeletal,,,FALSE,,FALSE
+RootZoneParticleSize,,14,FSI,Fine-silty,,,FALSE,,FALSE
+RootZoneParticleSize,,15,G,Grumic,,,FALSE,,FALSE
+RootZoneParticleSize,,16,L,Loamy,,,FALSE,,FALSE
+RootZoneParticleSize,,17,S,Sandy,,,FALSE,,FALSE
+RootZoneParticleSize,,18,SS,Sandy-skeletal,,,FALSE,,FALSE
+RootZoneParticleSize,,19,T,Thixotropic,,,FALSE,,FALSE
+RootZoneParticleSize,,20,TS,Thixotropic-skeletal,,,FALSE,,FALSE
+RootZoneParticleSize,,21,VFC,Very fine-clayey,,,FALSE,,FALSE
+RootZoneParticleSize,,22,Fi,Fibric,,,FALSE,,FALSE
+RootZoneParticleSize,,23,Me,Mesic,,,FALSE,,FALSE
+RootZoneParticleSize,,24,Hu,Humic,,,FALSE,,FALSE
+RootZoneParticleSize,,25,Wo,Woody,,,FALSE,,FALSE
+SiteDisturbance,,9,A.p,atmospheric pollution,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,10,A.p.ac,acid rain,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,11,A.p.to,toxic gases,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,12,A.w,windthrow,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,13,B,Biotic effects,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,14,B.b,beaver tree cutting,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,15,B.d,domestic grazing/browsing,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,16,B.w,wildlife grazing/browsing,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,17,B.e,excrement accumulation (other than that normally associated with,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,18,B.i,insects,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,19,B.i.ki,insect kill,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,20,B.i.in,infestation,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,21,B.p,disease,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,22,B.t,turbation (soil),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,23,B.v,aggressive vegetation,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,24,D,Disposals,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,25,D.c,chemical spill or disposal,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,26,D.e,effluent disposal,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,27,D.g,domestic garbage disposal,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,28,D.o,oil spill or disposal,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,29,D.r,radioactive waste disposal or exposure,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,30,F,Fires,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,31,F.c,overstorey crown fire,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,32,F.g,light surface (ground) fire,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,33,F.r,repeated light surface fires,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,34,F.s,severe surface fire,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,35,F.i,repeated severe surface fires,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,36,F.l,burning of logging slash,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,37,F.l.bb,broadcast burn,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,38,F.l.pb,piled and burned,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,39,F.l.wb,burned windrows,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,40,L,Forest harvesting,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,41,L.l,land clearing (includes abandoned agriculture),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,42,L.a,patch cut system,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,43,L.a.wr,with reserves,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,44,L.c,"clearcut system (if slashburned, see also ""Fires"")",SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,45,L.c.wr,with reserves (patch retention),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,46,L.d,seed tree system,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,47,L.d.un,uniform,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,1,,null,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,2,A,Atmosphere-related effects,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,3,A.e,climatic extremes,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,4,A.e.co,extreme cold,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,5,A.e.ht,extreme heat,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,6,A.e.gl,glaze ice,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,7,A.e.ha,severe hail,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,8,A.e.sn,heavy snow,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,48,L.d.gr,grouped,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,49,L.e,selection system,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,50,L.e.gr,group selection,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,51,L.e.si,single tree,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,52,L.e.st,strip,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,53,L.s,shelterwood system,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,54,L.s.un,uniform,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,55,L.s.gr,group,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,56,L.s.st,strip,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,57,L.s.ir,irregular,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,58,L.s.na,natural,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,59,L.s.nu,nurse tree,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,60,L.o,coppice,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,61,M,Plant or site modification effects,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,62,M.c,herbicide use (chemical),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,63,M.f,"fertilization (specify type under ""Notes"")",SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,64,M.i,irrigation,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,65,M.g,seeded or planted to grasses,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,66,M.h,seeded or planted to herbs,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,67,M.s,planted or seeded to shrubs,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,68,M.t,planted or seeded to trees,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,69,M.p,gathering or removal of plant products,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,70,M.f,firewood gathering,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,71,M.m,mushrooms,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,72,M.o,moss,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,73,M.s,"shrubs (e.g., salal, falsebox)",SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,74,M.x,"other (specify under ""Notes"")",SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,75,R,Recreation-related effects,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,76,R.m,motorized trails,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,77,R.m.ec,constructed trail,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,78,R.m.it,informal trail,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,79,R.m.bt,braided trail sections,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,80,R.m.tr,trampling – temporary use,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,81,R.m.mb,mud bogging/rutting,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,82,R.m.wi,winter use trails,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,83,R.t,non-motorized trails,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,84,R.t.ec,constructed trail,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,85,R.t.it,informal trails,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,86,R.t.bt,braided trails section,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,87,R.t.tr,trampling – single use,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,88,R.t.mb,mucking and trail entrenchment,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,89,R.t.wi,winter use trails,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,90,R.c,camping,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,91,R.c.ec,established camp site,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,92,R.c.ic,informal camp site,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,93,R.l,litter and debris,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,94,R.p,plant introductions,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,95,S,Soil disturbance,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,96,S.a,cultivation (agricultural),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,97,S.c,compaction,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,98,S.g,gouging (> 5 cm into mineral soil),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,99,S.s,scalping (forest floor removed),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,100,S.f,sidecast/fill,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,101,S.r,"road bed, abandoned",SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,102,S.t,"railway, abandoned",SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,103,S.e,excavation,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,104,S.m,mining effects,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,105,S.m.pt,placer tailings,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,106,S.m.rq,rock quarrying (including open pit mines),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,107,S.m.ta,tailings,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,108,S.p,mechanical site preparation,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,109,S.p.bb,brush blading,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,110,S.p.ds,drag scarification (anchor chain or shark fin),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,111,S.p.dt,disc trenching,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,112,S.p.md,mounding,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,113,S.p.ps,patch scarification,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,114,S.p.vp,V-plowing,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,115,S.p.xx,other (specify under “Notes”),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,116,T,Terrain-related effects,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,117,T.a,avalanche,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,118,T.d,recent deglaciation,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,119,T.e,eolian (active deflation or deposition),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,120,T.s,"terrain failures (active/recent slumps, slides, solifluction, etc.)",SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,121,T.v,volcanic activity,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,122,W,Water-related effects,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,123,W.i,inundation (including temporary inundation resulting from beaver activity),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,124,W.s,temporary seepage (usually artificially induced; excludes intermittent seepage resulting from climate,SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,125,W.d,"water table control (diking, damming)",SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,126,W.e,water table depression (associated with extensive water extraction from wells),SiteDisturbance,3,TRUE,,FALSE
+SiteDisturbance,,127,X,"Miscellaneous (For other disturbance types, enter “X” and describe under “Notes"")",SiteDisturbance,3,TRUE,,FALSE
+SiteModifier,,17,m,Medium-textured soils,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,0,,Null,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,12,x,Drier than typical,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,13,y,Moister than typical,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,14,c,Coarse-textured soils,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,15,d,Deep soil,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,16,f,Fine-textured soils,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,18,p,Peaty material,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,19,s,Shallow soils,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,20,v,Very shallow soils,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,1,a,Active floodplain,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,2,g,Gullying occuring,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,3,h,Hummocky terrain,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,4,i,Gentle slope,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,5,k,Cool aspect,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,6,n,Fan,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,7,q,Very steep cool aspect,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,8,r,Ridge,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,9,t,Terrace,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,10,w,Warm aspect,SiteModifier1 & 2,,FALSE,,FALSE
+SiteModifier,,11,z,Very steep warm aspect,SiteModifier1 & 2,,FALSE,,FALSE
+SiviMesoSlopePosition,,1,1,CR,,,FALSE,,FALSE
+SiviMesoSlopePosition,,2,2,UP,,,FALSE,,FALSE
+SiviMesoSlopePosition,,3,3,MD,,,FALSE,,FALSE
+SiviMesoSlopePosition,,4,4,LW,,,FALSE,,FALSE
+SiviMesoSlopePosition,,5,5,TO,,,FALSE,,FALSE
+SiviMesoSlopePosition,,7,7,LV,,,FALSE,,FALSE
+SiviMesoSlopePosition,,6,6,DP,,,FALSE,,FALSE
+SiviStructuralStage,,1,1,1a,,,FALSE,,FALSE
+SiviStructuralStage,,2,2,1b,,,FALSE,,FALSE
+SiviStructuralStage,,3,3,2a,,,FALSE,,FALSE
+SiviStructuralStage,,4,4,2b,,,FALSE,,FALSE
+SiviStructuralStage,,5,5,2c,,,FALSE,,FALSE
+SiviStructuralStage,,6,6,2d,,,FALSE,,FALSE
+SiviStructuralStage,,7,7,3a,,,FALSE,,FALSE
+SiviStructuralStage,,8,8,3b,,,FALSE,,FALSE
+SiviStructuralStage,,9,9,4,,,FALSE,,FALSE
+SiviStructuralStage,,10,10,5,,,FALSE,,FALSE
+SiviStructuralStage,,11,11,6,,,FALSE,,FALSE
+SiviStructuralStage,,12,12,7a,,,FALSE,,FALSE
+SiviStructuralStage,,13,13,7b,,,FALSE,,FALSE
+SiviSurfaceShape,,1,1,ST,,,FALSE,,FALSE
+SiviSurfaceShape,,2,2,CC,,,FALSE,,FALSE
+SiviSurfaceShape,,3,3,CV,,,FALSE,,FALSE
+SnowCoverRegime,,1,A,Very exposed,SnowCoverRegime,,FALSE,,FALSE
+SnowCoverRegime,,2,B,Exposed,SnowCoverRegime,,FALSE,,FALSE
+SnowCoverRegime,,3,C,Neutral,SnowCoverRegime,,FALSE,,FALSE
+SnowCoverRegime,,4,D,Protected,SnowCoverRegime,,FALSE,,FALSE
+SnowCoverRegime,,5,E,Very protected,SnowCoverRegime,,FALSE,,FALSE
+SnowCoverRegime,,6,,Null,SnowCoverRegime,,FALSE,,FALSE
+SoilClassGroup,,1,,Null,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,2,BRC,Brown Chernozem,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,3,BLC,Black Chernozem,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,4,B,Brunisol Order,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,5,DBC,Dark Brown Chernozem,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,6,DGC,Dark Gray Chernozem,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,7,DYB,Dystric Brunisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,8,EB,Eutric Brunisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,9,F,Fibrisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,10,FHP,Ferro-Humic Podzol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,11,FO,Folisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,12,G,Gleysol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,13,GBL,Gray Brown Luvisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,14,GL,Gray Luvisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,15,H,Humisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,16,HFP,Humo-Ferric Podzol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,17,HG,Humic Gleysol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,18,HP,Humic Podzol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,19,HR,Humic Regosol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,20,LG,Luvic Gleysol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,21,M,Mesisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,22,MB,Melanic Brunisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,23,OC,Organic Cryosol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,24,R,Regosol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,25,SB,Sombric Brunisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,26,SC,Static Cryosol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,27,SO,Solod,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,28,SS,Solodized Solonetz,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,29,SZ,Solonetz,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,30,TC,Turbic Cryosol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,31,V,Vertisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,32,HV,Humic Vertisol,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,33,VS,Vertic Solonetz,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,34,O,Organic Order,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,35,CH,Chernozem Order,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,36,CY,Cryosol Order,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,37,L,Luvisol Order,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,38,S,Solonetz Order,SoilClassGroup,,TRUE,,FALSE
+SoilClassGroup,,39,P,Podzol Order,SoilClassGroup,,TRUE,,FALSE
+SoilClassSubgroup,,1,,Null,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,2,A,Alkaline,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,3,B,Brown,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,4,BL,Black,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,5,BR,Brunisolic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,6,CA,Calcareous,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,7,CU,Cumulo,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,8,D,Dark,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,9,DB,Dark Brown,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,10,DG,Dark Gray,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,11,DU,Duric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,12,E,Eluviated,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,13,FE,Fera,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,14,FI,Fibric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,15,FR,Fragic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,16,G,Gray,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,17,GC,Glacic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,18,GL,Gleyed,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,19,GLB,Gleyed Brown,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,20,GLBL,Gleyed Black,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,21,GLBR,Gleyed Brunisolic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,22,GLCA,Gleyed Calcareous,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,23,GLCU,Gleyed Cumulic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,24,GLD,Gleyed Dark Gray,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,25,GLDB,Gleyed Dark Brown,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,26,GLDG,Gleyed Dark Gray,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,27,GLE,Gleyed Eluviated,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,28,GLFR,Gleyed Fragic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,29,GLG,Gleyed Gray,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,30,GLOT,Gleyed Ortstein,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,31,GLPZ,Gleyed Podzolic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,32,GLR,Gleyed Rego,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,33,GLSM,Gleyed Sombric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,34,GLSZ,Gleyed Solonetzic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,35,HE,Hemic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,36,HI,Histic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,37,HU,Humic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,38,HY,Hydric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,39,LI,Lignic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,40,LM,Limno,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,41,ME,Mesic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,42,O,Orthic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,43,OT,Ortstein,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,44,P,Placic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,45,PZ,Podzolic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,46,R,Rego,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,47,SM,Sombric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,48,SZ,Solonetzic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,49,T,Terric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,50,TFI,Terric Fibric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,51,THU,Terric Humic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,52,TME,Terric Mesic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,53,TY,Typic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,54,BRD,Brunisolic Dystric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,55,BRE,Brunisolic Eutric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,56,GLA,Gleyed Calcareous,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,57,GLV,Gleyed Vertic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,58,HD,Histic Dystric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,59,L,Luvisolic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,60,LU,Luvisolic,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,61,OD,Orthic Dystric,SoilClassSubgroup,,TRUE,,FALSE
+SoilClassSubgroup,,62,OE,Orthic Eutric,SoilClassSubgroup,,TRUE,,FALSE
+SoilDrainage,,0,,null,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,10,ac,aquic,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,8,aq,aqueous,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,13,hu,humid,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,5,i,imperfectly drained,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,4,m,moderately well drained,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,6,p,poorly drained,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,9,pa,peraquic,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,12,ph,perhumid,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,2,r,rapidly drained,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,11,sa,subaquic,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,7,v,very poorly drained,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,3,w,well drained,SoilDrainage,,TRUE,,FALSE
+SoilDrainage,,1,x,very rapidly drained,SoilDrainage,,TRUE,,FALSE
+SoilTexture,,16.1,Me,Mesic,,,FALSE,,FALSE
+SoilTexture,,8.1,Hu,Humic,,,FALSE,,FALSE
+SoilTexture,,27,WO,Woody,,,FALSE,,FALSE
+SoilTexture,,1,,null,,,FALSE,,FALSE
+SoilTexture,,2,C,Clay,,,FALSE,,FALSE
+SoilTexture,,3,CL,Clay loam,,,FALSE,,FALSE
+SoilTexture,,4,CS,Coarse sand,,,FALSE,,FALSE
+SoilTexture,,5,CSL,Coarse sandy loam,,,FALSE,,FALSE
+SoilTexture,,6.2,FS,Fine sand,,,FALSE,,FALSE
+SoilTexture,,7,FSL,Fine sandy loam,,,FALSE,,FALSE
+SoilTexture,,8,HC,Heavy clay,,,FALSE,,FALSE
+SoilTexture,,9,L,Loam,,,FALSE,,FALSE
+SoilTexture,,10,LCS,Loamy coarse sand,,,FALSE,,FALSE
+SoilTexture,,11,LFS,Loamy fine sand,,,FALSE,,FALSE
+SoilTexture,,12,LMS,Loamy medium sand,,,FALSE,,FALSE
+SoilTexture,,13,LS,Loamy sand,,,FALSE,,FALSE
+SoilTexture,,14,LVFS,Loamy very fine sand,,,FALSE,,FALSE
+SoilTexture,,15,MS,Medium sand,,,FALSE,,FALSE
+SoilTexture,,16,MSL,Medium sandy loam,,,FALSE,,FALSE
+SoilTexture,,17,S,Sand,,,FALSE,,FALSE
+SoilTexture,,18,SC,Sandy clay,,,FALSE,,FALSE
+SoilTexture,,19,SCL,Sandy clay loam,,,FALSE,,FALSE
+SoilTexture,,20,Si,Silt,,,FALSE,,FALSE
+SoilTexture,,21,SiC,Silty clay,,,FALSE,,FALSE
+SoilTexture,,22,SiCL,Silty clay loam,,,FALSE,,FALSE
+SoilTexture,,23,SiL,Silt loam,,,FALSE,,FALSE
+SoilTexture,,24,SL,Sandy loam,,,FALSE,,FALSE
+SoilTexture,,25,VFS,Very fine sand,,,FALSE,,FALSE
+SoilTexture,,26,VFSL,Very fine sandy loam,,,FALSE,,FALSE
+SoilTexture,,6.1,Fi,Fibric,,,FALSE,,FALSE
+Species,,1,A,Populus,,,FALSE,,FALSE
+Species,,2,Ac,Populus balsamifera,,,FALSE,,FALSE
+Species,,3,Acb,Populus b. ssp. balsamifera,,,FALSE,,FALSE
+Species,,4,Act,Populus b. ssp. trichocarpa,,,FALSE,,FALSE
+Species,,5,Ad,Populus deltoides (exotic),,,FALSE,,FALSE
+Species,,6,At,Populus tremuloides,,,FALSE,,FALSE
+Species,,7,Ax,Populus sp. x P. sp.,,,FALSE,,FALSE
+Species,,8,B,Abies,,,FALSE,,FALSE
+Species,,9,Ba,Abies amabilis,,,FALSE,,FALSE
+Species,,10,Bb,Abies balsamea (exotic),,,FALSE,,FALSE
+Species,,11,Bc,Abies concolor (exotic),,,FALSE,,FALSE
+Species,,12,Bg,Abies grandis,,,FALSE,,FALSE
+Species,,13,Bl,Abies lasiocarpa,,,FALSE,,FALSE
+Species,,14,Bm,Abies magnifica var. shastensis (exotic),,,FALSE,,FALSE
+Species,,15,Bp,Abies procera (exotic),,,FALSE,,FALSE
+Species,,16,C,Thuja,,,FALSE,,FALSE
+Species,,17,Cw,Thuja plicata,,,FALSE,,FALSE
+Species,,18,D,Alnus,,,FALSE,,FALSE
+Species,,19,Dr,Alnus rubra,,,FALSE,,FALSE
+Species,,20,E,Betula,,,FALSE,,FALSE
+Species,,21,Ea,Betula neoalaskana,,,FALSE,,FALSE
+Species,,22,Ee,Betula pendula (exotic),,,FALSE,,FALSE
+Species,,23,Ep,Betula papyrifera,,,FALSE,,FALSE
+Species,,24,Es,Betula pubescens (exotic),,,FALSE,,FALSE
+Species,,25,Ew,Betula occidentalis,,,FALSE,,FALSE
+Species,,26,Exp,Betula x winteri,,,FALSE,,FALSE
+Species,,27,Ey,Betula alleghaniensis,,,FALSE,,FALSE
+Species,,28,F,Pseudotsuga,,,FALSE,,FALSE
+Species,,29,Fd,Pseudotsuga menziesii,,,FALSE,,FALSE
+Species,,30,Fdc,Pseudotsuga menziesii var. menziesii,,,FALSE,,FALSE
+Species,,31,Fdi,Pseudotsuga menziesii var. glauca,,,FALSE,,FALSE
+Species,,32,G,Cornus,,,FALSE,,FALSE
+Species,,33,Gp,Cornus nuttallii,,,FALSE,,FALSE
+Species,,34,H,Tsuga,,,FALSE,,FALSE
+Species,,35,Hm,Tsuga mertensiana,,,FALSE,,FALSE
+Species,,36,Hw,Tsuga heterophylla,,,FALSE,,FALSE
+Species,,37,Hxm,Tsuga mertensiana x heterophylla,,,FALSE,,FALSE
+Species,,38,J,Juniperus,,,FALSE,,FALSE
+Species,,39,Jr,Juniperus scopulorum,,,FALSE,,FALSE
+Species,,40,Js,Juniperus maritima,,,FALSE,,FALSE
+Species,,41,K,Rhamnus,,,FALSE,,FALSE
+Species,,42,Kc,Rhamnus purshiana,,,FALSE,,FALSE
+Species,,43,L,Larix,,,FALSE,,FALSE
+Species,,44,La,Larix lyallii,,,FALSE,,FALSE
+Species,,45,Ld,Larix gmelinii (exotic),,,FALSE,,FALSE
+Species,,46,Ls,Larix siberica (exotic),,,FALSE,,FALSE
+Species,,47,Lt,Larix laricina,,,FALSE,,FALSE
+Species,,48,Lw,Larix occidentalis,,,FALSE,,FALSE
+Species,,49,M,Acer,,,FALSE,,FALSE
+Species,,50,Mb,Acer macrophyllum,,,FALSE,,FALSE
+Species,,51,Me,Acer negundo (exotic),,,FALSE,,FALSE
+Species,,52,Mn,Acer platanoides (exotic),,,FALSE,,FALSE
+Species,,53,Ms,Acer pseudoplatanus (exotic),,,FALSE,,FALSE
+Species,,54,Mv,Acer circinatum,,,FALSE,,FALSE
+Species,,55,Oa,Calocedrus decurrens (exotic),,,FALSE,,FALSE
+Species,,56,Ob,Sequoiadendron giganteum (exotic),,,FALSE,,FALSE
+Species,,57,Oc,Sequoia sempervirens (exotic),,,FALSE,,FALSE
+Species,,58,Od,Sorbus aucuparia (exotic),,,FALSE,,FALSE
+Species,,59,Oe,Ulmus pumila (exotic),,,FALSE,,FALSE
+Species,,60,Of,Pyrus communis (exotic),,,FALSE,,FALSE
+Species,,61,Og,Fraxinus latifolia (exotic),,,FALSE,,FALSE
+Species,,62,Oh,Fraxinus americana (exotic),,,FALSE,,FALSE
+Species,,63,Oi,Carya ovata (exotic),,,FALSE,,FALSE
+Species,,64,Oj,Ailanthus altissima (exotic),,,FALSE,,FALSE
+Species,,65,Ok,Juglans ailanthifolia (exotic),,,FALSE,,FALSE
+Species,,66,P,Pinus,,,FALSE,,FALSE
+Species,,67,Pa,Pinus albicaulis,,,FALSE,,FALSE
+Species,,68,Pf,Pinus flexilis,,,FALSE,,FALSE
+Species,,69,Pj,Pinus banksiana,,,FALSE,,FALSE
+Species,,70,Pl,Pinus contorta,,,FALSE,,FALSE
+Species,,71,Plc,Pinus contorta var. contorta,,,FALSE,,FALSE
+Species,,72,Pli,Pinus contorta var. latifolia,,,FALSE,,FALSE
+Species,,73,Pm,Pinus radiata (exotic),,,FALSE,,FALSE
+Species,,74,Pr,Pinus resinosa (exotic),,,FALSE,,FALSE
+Species,,75,Ps,Pinus lambertiana (exotic),,,FALSE,,FALSE
+Species,,76,Pw,Pinus monticola,,,FALSE,,FALSE
+Species,,77,Pxj,Pinus x murraybanksiana,,,FALSE,,FALSE
+Species,,78,Py,Pinus ponderosa,,,FALSE,,FALSE
+Species,,79,Q,Quercus,,,FALSE,,FALSE
+Species,,80,Qe,Quercus robur (exotic),,,FALSE,,FALSE
+Species,,81,Qg,Quercus garryana,,,FALSE,,FALSE
+Species,,82,Qw,Quercus alba (exotic),,,FALSE,,FALSE
+Species,,83,R,Arbutus,,,FALSE,,FALSE
+Species,,84,Ra,Arbutus menziesii,,,FALSE,,FALSE
+Species,,85,S,Picea,,,FALSE,,FALSE
+Species,,86,Sb,Picea mariana,,,FALSE,,FALSE
+Species,,87,Se,Picea engelmannii,,,FALSE,,FALSE
+Species,,88,Sn,Picea abies (exotic),,,FALSE,,FALSE
+Species,,89,Ss,Picea sitchensis,,,FALSE,,FALSE
+Species,,90,Sw,Picea glauca,,,FALSE,,FALSE
+Species,,91,Sx,Picea cross,,,FALSE,,FALSE
+Species,,92,Sxl,Picea x lutzii,,,FALSE,,FALSE
+Species,,93,Sxs,Picea sitchensis x ?,,,FALSE,,FALSE
+Species,,94,Sxw,Picea engelmannii x glauca,,,FALSE,,FALSE
+Species,,95,T,Taxus,,,FALSE,,FALSE
+Species,,96,Tw,Taxus brevifolia,,,FALSE,,FALSE
+Species,,97,U,Malus,,,FALSE,,FALSE
+Species,,98,Ua,Malus pumila (exotic),,,FALSE,,FALSE
+Species,,99,Up,Malus fusca,,,FALSE,,FALSE
+Species,,100,V,Prunus,,,FALSE,,FALSE
+Species,,101,Vb,Prunus emarginata,,,FALSE,,FALSE
+Species,,102,Vp,Prunus pensylvanica,,,FALSE,,FALSE
+Species,,103,Vs,Prunus avium (exotic),,,FALSE,,FALSE
+Species,,104,Vv,Prunus virginiana,,,FALSE,,FALSE
+Species,,105,W,Salix,,,FALSE,,FALSE
+Species,,106,Wa,Salix amygdaloides,,,FALSE,,FALSE
+Species,,107,Wb,Salix bebbiana,,,FALSE,,FALSE
+Species,,108,Wd,Salix discolor,,,FALSE,,FALSE
+Species,,109,Wp,Salix lucida,,,FALSE,,FALSE
+Species,,110,Ws,Salix scouleriana,,,FALSE,,FALSE
+Species,,111,Wt,Salix sitchensis,,,FALSE,,FALSE
+Species,,112,X,Unknown,,,FALSE,,FALSE
+Species,,113,Xc,Unknown conifer,,,FALSE,,FALSE
+Species,,114,Xh,Unknown hardwood,,,FALSE,,FALSE
+Species,,115,Y,Chamaecyparis,,,FALSE,,FALSE
+Species,,116,Yc,Chamaecyparis nootkatensis,,,FALSE,,FALSE
+Species,,117,Yp,Chamaecyparis lawsoniana (exotic),,,FALSE,,FALSE
+Species,,118,Z,"Other tree, not on list",,,FALSE,,FALSE
+Species,,119,Zc,Other conifer,,,FALSE,,FALSE
+Species,,120,Zh,Other hardwood,,,FALSE,,FALSE
+StructuralStage,,2,1,Non-vegetated/Sparse,StructuralStage,,TRUE,,FALSE
+StructuralStage,,6,2,Herb,StructuralStage,,TRUE,,FALSE
+StructuralStage,,11,3,Shrub/Herb,StructuralStage,,TRUE,,FALSE
+StructuralStage,,14,4,Pole/Sapling,StructuralStage,,TRUE,,FALSE
+StructuralStage,,15,5,Young Forest,StructuralStage,,TRUE,,FALSE
+StructuralStage,,16,6,Mature Forest,StructuralStage,,FALSE,,FALSE
+StructuralStage,,17,7,Old Forest,StructuralStage,,FALSE,,FALSE
+StructuralStage,,1,,null,StructuralStage,,FALSE,,FALSE
+StructuralStage,,3,1a,Sparse,StructuralStage,,FALSE,,FALSE
+StructuralStage,,4,1b,Bryoid,StructuralStage,,FALSE,,FALSE
+StructuralStage,,5,1c,Lichen,StructuralStage,,FALSE,,FALSE
+StructuralStage,,7,2a,Forb-dominated,StructuralStage,,TRUE,,FALSE
+StructuralStage,,8,2b,Graminoid-dominated,StructuralStage,,TRUE,,FALSE
+StructuralStage,,9,2c,Aquatic,StructuralStage,,TRUE,,FALSE
+StructuralStage,,10,2d,Dwarf shrub-dominated,StructuralStage,,TRUE,,FALSE
+StructuralStage,,12,3a,Low Shrub,StructuralStage,,TRUE,,FALSE
+StructuralStage,,13,3b,Tall Shrub,StructuralStage,,TRUE,,FALSE
+StructuralStage,,18,7a,Old Forest,StructuralStage,,TRUE,,FALSE
+StructuralStage,,19,7b,Very Old Forest,StructuralStage,,TRUE,,FALSE
+StructuralStageMod,,1,,Null,,,FALSE,,FALSE
+StructuralStageMod,,2,i,irregular,,,FALSE,,FALSE
+StructuralStageMod,,3,m,multistoried,,,FALSE,,FALSE
+StructuralStageMod,,4,n,natural shelterwood,,,FALSE,,FALSE
+StructuralStageMod,,5,s,Single-storied,,,FALSE,,FALSE
+StructuralStageMod,,6,t,two-storied,,,FALSE,,FALSE
+SubZone,,1,,Null,SubZone,,TRUE,,FALSE
+SubZone,,2,dc,Dry Cold,SubZone,,TRUE,,FALSE
+SubZone,,3,dc,Dry Cold,SubZone,,TRUE,,FALSE
+SubZone,,4,dcp,Dry Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,5,dcw,Dry Cold Woodland,SubZone,,TRUE,,FALSE
+SubZone,,6,dh,Dry Hot,SubZone,,TRUE,,FALSE
+SubZone,,7,dk,Dry Cool,SubZone,,TRUE,,FALSE
+SubZone,,8,dkp,Dry Cool Parkland,SubZone,,TRUE,,FALSE
+SubZone,,9,dks,Dry Cool Scrub,SubZone,,TRUE,,FALSE
+SubZone,,10,dku,Dry Cool Woodland and Parkland,SubZone,,TRUE,,FALSE
+SubZone,,11,dkw,Dry Cool Woodland,SubZone,,TRUE,,FALSE
+SubZone,,12,dm,Dry Maritime,SubZone,,TRUE,,FALSE
+SubZone,,13,dm,Dry Mild,SubZone,,TRUE,,FALSE
+SubZone,,14,dmp,Dry Mild Parkland,SubZone,,TRUE,,FALSE
+SubZone,,15,dmw,Dry Mild Woodland,SubZone,,TRUE,,FALSE
+SubZone,,16,ds,Dry Submaritime,SubZone,,TRUE,,FALSE
+SubZone,,17,dv,Dry Very Cold,SubZone,,TRUE,,FALSE
+SubZone,,18,dvp,Dry Very Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,19,dvw,Dry Very Cold Woodland,SubZone,,TRUE,,FALSE
+SubZone,,20,dw,Dry Warm,SubZone,,TRUE,,FALSE
+SubZone,,21,mc,Moist Cold,SubZone,,TRUE,,FALSE
+SubZone,,22,mcp,Moist Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,23,mh,Moist Hot,SubZone,,TRUE,,FALSE
+SubZone,,24,mk,Moist Cool,SubZone,,TRUE,,FALSE
+SubZone,,25,mkp,Moist Cool Parkland,SubZone,,TRUE,,FALSE
+SubZone,,26,mks,Moist Cool Scrub,SubZone,,TRUE,,FALSE
+SubZone,,27,mm,Moist Maritime,SubZone,,TRUE,,FALSE
+SubZone,,28,mm,Moist Mild,SubZone,,TRUE,,FALSE
+SubZone,,29,mmp,Moist Maritime Parkland,SubZone,,TRUE,,FALSE
+SubZone,,30,mmp,Moist Mild Parkland,SubZone,,TRUE,,FALSE
+SubZone,,31,mmw,Moist Mild Woodland,SubZone,,TRUE,,FALSE
+SubZone,,32,ms,Moist Submaritime,SubZone,,TRUE,,FALSE
+SubZone,,33,mv,Moist Very Cold,SubZone,,TRUE,,FALSE
+SubZone,,34,mvp,Moist Very Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,35,mw,Moist Warm,SubZone,,TRUE,,FALSE
+SubZone,,36,mwp,Moist Warm Parkland,SubZone,,TRUE,,FALSE
+SubZone,,37,mww,Moist Warm Woodland,SubZone,,TRUE,,FALSE
+SubZone,,38,un,Undifferentiated,SubZone,,TRUE,,FALSE
+SubZone,,39,unp,Undifferentiated and Parkland,SubZone,,TRUE,,FALSE
+SubZone,,40,unp,Undifferentiated Parkland,SubZone,,TRUE,,FALSE
+SubZone,,41,uns,Undifferentiated Scrub,SubZone,,TRUE,,FALSE
+SubZone,,42,vc,Very Wet Cold,SubZone,,TRUE,,FALSE
+SubZone,,43,vcp,Very Wet Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,44,vcw,Very Wet Cold Woodland,SubZone,,TRUE,,FALSE
+SubZone,,45,vh,Very Wet Hypermaritime,SubZone,,TRUE,,FALSE
+SubZone,,46,vk,Very Wet Cool,SubZone,,TRUE,,FALSE
+SubZone,,47,vks,Very Wet Cool Scrub,SubZone,,TRUE,,FALSE
+SubZone,,48,vm,Very Wet Maritime,SubZone,,TRUE,,FALSE
+SubZone,,49,vv,Very Wet Very Cold,SubZone,,TRUE,,FALSE
+SubZone,,50,vvp,Very Wet Very Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,51,wc,Wet Cold,SubZone,,TRUE,,FALSE
+SubZone,,52,wcp,Wet Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,53,wcw,Wet Cold Woodland,SubZone,,TRUE,,FALSE
+SubZone,,54,wh,Wet Hypermaritime,SubZone,,TRUE,,FALSE
+SubZone,,55,whp,Wet Hypermaritime Parkland,SubZone,,TRUE,,FALSE
+SubZone,,56,wk,Wet Cool,SubZone,,TRUE,,FALSE
+SubZone,,57,wm,Wet Maritime,SubZone,,TRUE,,FALSE
+SubZone,,58,wm,Wet Mild,SubZone,,TRUE,,FALSE
+SubZone,,59,wmp,Wet Mild Parkland,SubZone,,TRUE,,FALSE
+SubZone,,60,wmw,Wet Mild Woodland,SubZone,,TRUE,,FALSE
+SubZone,,61,ws,Wet Submaritime,SubZone,,TRUE,,FALSE
+SubZone,,62,wv,Wet Very Cold,SubZone,,TRUE,,FALSE
+SubZone,,63,wvp,Wet Very Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,64,ww,Wet Warm,SubZone,,TRUE,,FALSE
+SubZone,,65,xc,Very Dry Cold,SubZone,,TRUE,,FALSE
+SubZone,,66,xcp,Very Dry Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,67,xcw,Very Dry Cold Woodland,SubZone,,TRUE,,FALSE
+SubZone,,68,xh,Very Dry Hot,SubZone,,TRUE,,FALSE
+SubZone,,69,xk,Very Dry Cool,SubZone,,TRUE,,FALSE
+SubZone,,70,xm,Very Dry Maritime,SubZone,,TRUE,,FALSE
+SubZone,,71,xm,Very Dry Mild,SubZone,,TRUE,,FALSE
+SubZone,,72,xv,Very Dry Very Cold,SubZone,,TRUE,,FALSE
+SubZone,,73,xvp,Very Dry Very Cold Parkland,SubZone,,TRUE,,FALSE
+SubZone,,74,xvw,Very Dry Very Cold Woodland,SubZone,,TRUE,,FALSE
+SubZone,,75,xw,Very Dry Warm,SubZone,,TRUE,,FALSE
+SuccessionalStatus,,1,,null,SuccessionalStatus,,TRUE,,FALSE
+SuccessionalStatus,,2,DC,disclimax,SuccessionalStatus,,TRUE,,FALSE
+SuccessionalStatus,,3,MC,maturing climax,SuccessionalStatus,,TRUE,,FALSE
+SuccessionalStatus,,4,MS,maturing seral,SuccessionalStatus,,TRUE,,FALSE
+SuccessionalStatus,,5,NV,non-vegetated,SuccessionalStatus,,TRUE,,FALSE
+SuccessionalStatus,,6,OS,overmature seral,SuccessionalStatus,,TRUE,,FALSE
+SuccessionalStatus,,7,PS,pioneer seral,SuccessionalStatus,,TRUE,,FALSE
+SuccessionalStatus,,8,YC,young climax,SuccessionalStatus,,TRUE,,FALSE
+SuccessionalStatus,,9,YS,young seral,SuccessionalStatus,,TRUE,,FALSE
+SuccessionalStatus,,10,OC,Old Climax,SuccessionalStatus,,TRUE,,FALSE
+SurfaceExp,,1,,Null,,,FALSE,,FALSE
+SurfaceExp,,2,a,Moderate slope,,,FALSE,,FALSE
+SurfaceExp,,3,b,Blanket,,,FALSE,,FALSE
+SurfaceExp,,4,c,Cones,,,FALSE,,FALSE
+SurfaceExp,,5,d,Depressions,,,FALSE,,FALSE
+SurfaceExp,,6,f,Fans,,,FALSE,,FALSE
+SurfaceExp,,7,h,Hummocks,,,FALSE,,FALSE
+SurfaceExp,,8,j,Gentle slopes,,,FALSE,,FALSE
+SurfaceExp,,9,k,Moderately steep slopes,,,FALSE,,FALSE
+SurfaceExp,,10,m,Rolling,,,FALSE,,FALSE
+SurfaceExp,,11,p,Plain,,,FALSE,,FALSE
+SurfaceExp,,12,r,Ridges,,,FALSE,,FALSE
+SurfaceExp,,13,s,Steep slope,,,FALSE,,FALSE
+SurfaceExp,,14,t,Terrace,,,FALSE,,FALSE
+SurfaceExp,,15,u,Undulating,,,FALSE,,FALSE
+SurfaceExp,,16,v,Veneer,,,FALSE,,FALSE
+SurfaceExp,,17,w,Mantle of variable thickness,,,FALSE,,FALSE
+SurfaceExp,,18,x,Thin veneer,,,FALSE,,FALSE
+SurfaceShape,,2,CC,Concave,,,FALSE,,FALSE
+SurfaceShape,,4,ST,Straight,,,FALSE,,FALSE
+SurfaceShape,,3,CV,Convex,,,FALSE,,FALSE
+SurfaceShape,,1,,Null,,,FALSE,,FALSE
+SurfaceTopography,,1,,Null,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,2,cha,Channeled,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,3,dom,Domed,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,4,gul,Gullied,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,5,hmk,Hummocked,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,6,lob,Lobed,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,7,mnd,Mounded,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,8,net,Netted,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,9,phi,Polygonal - high centred,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,10,plo,Polygonal - low centred,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,11,rib,Ribbed,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,12,smo,Smooth,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,13,tus,Tussocked,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopography,,14,und,Undulating,SurfaceTopographyType,,TRUE,,FALSE
+SurfaceTopographySize,,1,,null,,,FALSE,,FALSE
+SurfaceTopographySize,,2,ex,extremely,,,FALSE,,FALSE
+SurfaceTopographySize,,3,mc,micro,,,FALSE,,FALSE
+SurfaceTopographySize,,4,md,moderately,,,FALSE,,FALSE
+SurfaceTopographySize,,5,sl,slightly,,,FALSE,,FALSE
+SurfaceTopographySize,,6,st,strongly,,,FALSE,,FALSE
+SurfaceTopographySize,,7,sv,severely,,,FALSE,,FALSE
+SurfaceTopographySize,,8,ul,ultra,,,FALSE,,FALSE
+SurficialMaterial,,1,,Null,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,2,A,Anthropogenic,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,3,C,Colluvium,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,4,D,Weathered bedrock,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,5,E,Eolian,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,6,F,Fluvial,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,7,FG,Glaciofluvial,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,8,I,Ice,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,9,L,Lacustrine,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,10,LG,Glaciolacustrine,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,11,M,Morainal,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,12,O,Organic,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,13,R,Bedrock,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,14,U,Undifferentiated,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,15,V,Volcanic,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,16,W,Marine,SurficialMaterialSurf,,TRUE,,FALSE
+SurficialMaterial,,17,WG,Glaciomarine,SurficialMaterialSurf,,TRUE,,FALSE
+TerrainTexture,,1,,Null,,,FALSE,,FALSE
+TerrainTexture,,2,a,blocks,,,FALSE,,FALSE
+TerrainTexture,,3,b,boulders,,,FALSE,,FALSE
+TerrainTexture,,4,c,clay,,,FALSE,,FALSE
+TerrainTexture,,5,d,mixed fragments,,,FALSE,,FALSE
+TerrainTexture,,6,e,fibric,,,FALSE,,FALSE
+TerrainTexture,,7,g,gravel,,,FALSE,,FALSE
+TerrainTexture,,8,h,humic,,,FALSE,,FALSE
+TerrainTexture,,9,k,Cobble,,,FALSE,,FALSE
+TerrainTexture,,10,m,mud,,,FALSE,,FALSE
+TerrainTexture,,11,p,Pebbles,,,FALSE,,FALSE
+TerrainTexture,,12,r,rubble,,,FALSE,,FALSE
+TerrainTexture,,13,s,sand,,,FALSE,,FALSE
+TerrainTexture,,14,u,mesic,,,FALSE,,FALSE
+TerrainTexture,,15,x,angular,,,FALSE,,FALSE
+TerrainTexture,,16,y,shells,,,FALSE,,FALSE
+TerrainTexture,,17,z,silt,,,FALSE,,FALSE
+TransDistrib,,2,1,Homogenous,TransDistrib,,TRUE,,FALSE
+TransDistrib,,3,2,90% Homogenous,TransDistrib,,TRUE,,FALSE
+TransDistrib,,4,3,Homo-Transitional,TransDistrib,,TRUE,,FALSE
+TransDistrib,,5,4,Gradation,TransDistrib,,TRUE,,FALSE
+TransDistrib,,6,5,70%/30%,TransDistrib,,TRUE,,FALSE
+TransDistrib,,7,6,70%/20%/10%,TransDistrib,,TRUE,,FALSE
+TransDistrib,,8,7,50%+/50%transition,TransDistrib,,TRUE,,FALSE
+TransDistrib,,9,8,50%+trans/50%other,TransDistrib,,TRUE,,FALSE
+TransDistrib,,1,,null,TransDistrib,,TRUE,,FALSE
+UtilizationCode,,1,,null,,,FALSE,,FALSE
+UtilizationCode,,2,0,Nil,,,FALSE,,FALSE
+UtilizationCode,,3,1,Slight (1-15),,,FALSE,,FALSE
+UtilizationCode,,4,2,Light (16-36),,,FALSE,,FALSE
+UtilizationCode,,5,3,Moderate (36-65),,,FALSE,,FALSE
+UtilizationCode,,6,4,Heavy (66-80),,,FALSE,,FALSE
+UtilizationCode,,7,5,Extreme (80-100),,,FALSE,,FALSE
+VegCoverMethod,,1,,Null,Metadata form,,FALSE,,FALSE
+VegCoverMethod,,2,Percent,,Metadata form,,FALSE,,FALSE
+VegCoverMethod,,3,Braun-Blanquet,,Metadata form,,FALSE,,FALSE
+VegCoverMethod,,4,Domin-Krajina,,Metadata form,,FALSE,,FALSE
+VegCoverMethod,,5,Other,,Metadata form,,FALSE,,FALSE
+VegOther1,,1,,null,,,FALSE,,FALSE
+VegOther1,,2,1,Class 1,,,FALSE,,FALSE
+VegOther1,,3,2,Class 2,,,FALSE,,FALSE
+VegOther1,,4,3,Class 3,,,FALSE,,FALSE
+VegOther1,,5,4,Class 4,,,FALSE,,FALSE
+VegOther2,,1,,null,,,FALSE,,FALSE
+VegOther2,,2,1,Class 1,,,FALSE,,FALSE
+VegOther2,,3,2,Class 2,,,FALSE,,FALSE
+VegOther2,,4,3,Class 3,,,FALSE,,FALSE
+VegOther2,,5,4,Class 4,,,FALSE,,FALSE
+VigourCode,,1,,null,,,FALSE,,FALSE
+VigourCode,,2,0,Dead,,,FALSE,,FALSE
+VigourCode,,3,1,Poor,,,FALSE,,FALSE
+VigourCode,,4,2,Fair,,,FALSE,,FALSE
+VigourCode,,5,3,Good,,,FALSE,,FALSE
+VigourCode,,6,4,Excellent,,,FALSE,,FALSE
+vonPost,,1,1,undecomposed,,,FALSE,,FALSE
+vonPost,,2,2,almost undecomposed,,,FALSE,,FALSE
+vonPost,,3,3,very weakly decomposed,,,FALSE,,FALSE
+vonPost,,4,4,weakly decomposed,,,FALSE,,FALSE
+vonPost,,5,5,moderately decomposed,,,FALSE,,FALSE
+vonPost,,6,6,strongly decomposed; 1/3 escapes,,,FALSE,,FALSE
+vonPost,,7,7,strongly decomposed; 1/2 escapes,,,FALSE,,FALSE
+vonPost,,8,8,very strongly decomposed,,,FALSE,,FALSE
+vonPost,,9,9,almost completely decomposed,,,FALSE,,FALSE
+vonPost,,10,10,completely decomposed,,,FALSE,,FALSE
+vonPost,,0,,null,,,FALSE,,FALSE
+WaterSource,,1,,Null,WaterSource,,TRUE,,FALSE
+WaterSource,,2,E,"Tidal, saltwater",WaterSource,,TRUE,,FALSE
+WaterSource,,3,F,Stream sub-irrigation and flooding,WaterSource,,TRUE,,FALSE
+WaterSource,,4,G,Groundwater,WaterSource,,TRUE,,FALSE
+WaterSource,,9,Z,Permafrost,WaterSource,,TRUE,,FALSE
+WaterSource,,5,M,Mineral spring,WaterSource,,TRUE,,FALSE
+WaterSource,,6,P,Preciptitation,WaterSource,,TRUE,,FALSE
+WaterSource,,7,S,Snowmelt,WaterSource,,TRUE,,FALSE
+WaterSource,,8,T,"Tidal, freshwater",WaterSource,,TRUE,,FALSE
+WoodCondition,,2,1,no decay,,,FALSE,,FALSE
+WoodCondition,,3,2,probable limited internal decay &/or deformities,,,FALSE,,FALSE
+WoodCondition,,4,3,"wood esssentially hard, limited decay",,,FALSE,,FALSE
+WoodCondition,,5,4,"wood mostly hard but decay spreading, soft wood present",,,FALSE,,FALSE
+WoodCondition,,6,5,"balance of hard and soft wood, spongy sections",,,FALSE,,FALSE
+WoodCondition,,7,6,more soft and spongy wood than hard wood,,,FALSE,,FALSE
+WoodCondition,,8,7,"no more hard wood. all soft or spongy, powdery sections",,,FALSE,,FALSE
+WoodCondition,,9,8,"hollow shell, outer wood mostly hard or firm",,,FALSE,,FALSE
+WoodCondition,,1,,null,,,FALSE,,FALSE
+Zone,,1,,Null,Zone,,TRUE,,FALSE
+Zone,,3,BAFA,Boreal Altai Fescue Alpine,Zone,,TRUE,,FALSE
+Zone,,4,BG,Bunchgrass,Zone,,TRUE,,FALSE
+Zone,,5,BWBS,Boreal White and Black Spruce,Zone,,TRUE,,FALSE
+Zone,,6,CDF,Coastal Douglas-fir,Zone,,TRUE,,FALSE
+Zone,,7,CMA,Coastal Mountain-heather Alpine,Zone,,TRUE,,FALSE
+Zone,,8,CWH,Coastal Western Hemlock,Zone,,TRUE,,FALSE
+Zone,,9,ESSF,Engelmann Spruce -- Subalpine Fir,Zone,,TRUE,,FALSE
+Zone,,10,ICH,Interior Cedar -- Hemlock,Zone,,TRUE,,FALSE
+Zone,,11,IDF,Interior Douglas-fir,Zone,,TRUE,,FALSE
+Zone,,12,IMA,Interior Mountain-heather Alpine,Zone,,TRUE,,FALSE
+Zone,,13,MH,Mountain Hemlock,Zone,,TRUE,,FALSE
+Zone,,14,MS,Montane Spruce,Zone,,TRUE,,FALSE
+Zone,,15,PP,Ponderosa Pine,Zone,,TRUE,,FALSE
+Zone,,16,SBPS,Sub-Boreal Pine -- Spruce,Zone,,TRUE,,FALSE
+Zone,,17,SBS,Sub-Boreal Spruce,Zone,,TRUE,,FALSE
+Zone,,18,SWB,Spruce -- Willow -- Birch,Zone,,TRUE,,FALSE

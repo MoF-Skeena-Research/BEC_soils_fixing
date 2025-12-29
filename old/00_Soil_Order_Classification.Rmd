@@ -1,0 +1,557 @@
+---
+title: "00_Soil_Order_Classification"
+author: "pdsewll"
+date: "2023-03-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(reshape)
+require(reshape2)
+require(vegan)
+require(caret)
+require(tcltk)
+require(randomForest)
+require(Matrix)
+require(labdsv)
+require(gdata)
+require(MASS)
+require(openxlsx)
+require (C50)
+require(tidyr)
+require(stringr)
+require(rpart)
+require(tree)
+require(rattle)
+require(rpart.plot)
+require(partykit)
+require(vegclust)
+require(standardize)
+require(dplyr)
+require(tictoc)
+require(plyr)
+require(Hmisc)
+require(data.table)
+require(tidyverse)
+require(psych)
+require(DataExplorer)
+
+```
+# Background
+
+This script links to a VPRO database and brings in _MIN, _HMS, for classification 
+1. Creates classification using a list to store results, faster than previous R bind solution
+2. Improve filters for pretreatment, and refined classification
+3. Soil texture fixes
+
+
+---{r import data}
+
+#PDS: can't open access database without key. I instead opened the BECMaster64_Mineral as an xlsx workbook, and _Humus. See next chunk.
+
+```{r Import excel workbooks, echo = TRUE}
+
+plot.hum <- readxl::read_xlsx("../access_data/BECMaster64_Humus.xlsx")
+plot.min <- readxl::read_xlsx("../access_data/BECMaster64_Mineral.xlsx")
+```
+
+```{r Modify Humus and Mineral dataframes, echo = TRUE}
+
+
+##Humus
+plot.hum2 <- plot.hum %>% dplyr::select(PlotNumber, Horizon, UpperDepth, LowerDepth, Comment) %>% dplyr::rename(Comments = Comment, UpperDepth = LowerDepth, LowerDepth = UpperDepth) %>% mutate(Depth = UpperDepth - LowerDepth) #reorder upper and lower depths since LFH/O Horizons
+
+plot.hum2 <- plot.hum2 %>% mutate(newUpperDepth = ifelse(Depth<0, LowerDepth, UpperDepth)) %>% 
+    mutate(newLowerDepth = ifelse(Depth<0, UpperDepth,LowerDepth)) %>%
+    mutate(newDepth = newUpperDepth - newLowerDepth) %>% dplyr::select(-UpperDepth, -LowerDepth, -Depth) %>% 
+  mutate(Texture = "Org", origin = "Humus")
+
+plot.hum2$Horizon <- stringr::str_replace_all(plot.hum2$Horizon, "-", "")
+plot.hum2$Horizon <- stringr::str_replace_all(plot.hum2$Horizon, " ", "")
+plot.hum2$Horizon <- stringr::str_replace_all(plot.hum2$Horizon, "\\(", "")
+plot.hum2$Horizon <- stringr::str_replace_all(plot.hum2$Horizon, "\\)", "")
+plot.hum2$Horizon <- stringr::str_replace_all(plot.hum2$Horizon, "/", "")
+
+
+unique(plot.hum2$Horizon)
+
+#Filter entries horizons that are NOT organic (ie A,B,C), then calculate cumulative organic thickness. Also Excluding buried horizons; drawback of filtering buried horizons- may exclude some organics from being classified ie Om, Hb, Oh, A,B,C
+plot.hum3 <- plot.hum2 %>% filter(!Horizon %in% c(grep("^A(?!sh)|^B|^C(?!har)|
+                                                       ^IA(?!sh)|^IB|^IC(?!har)|
+                                                       ^IIA(?!sh)|^IIB|^IIC(?!har)|
+                                                       ^IIIA(?!sh)|^IIIB|^IIIC(?!har)|
+                                                       ^IVA(?!sh)|^IVB|^IVC(?!har)|
+                                                       ^VA(?!sh)|^VB|^VC(?!har)|
+                                                       ^VIA(?!sh)|^VIB|^VIC(?!har)|
+                                                       ^VIIA(?!sh)|^VIIB|^VIIC(?!har)|
+                                                       ^VIIIA(?!sh)|^VIIIB|^VIIIC(?!har)|
+                                                       ^1A(?!sh)|^1B|^1C(?!har)|
+                                                       ^2A(?!sh)|^2B|^2C(?!har)|
+                                                       ^3A(?!sh)|^3B|^3C(?!har)|
+                                                       ^4A(?!sh)|^4B|^4C(?!har)|
+                                                       ^5A(?!sh)|^5B|^5C(?!har)|
+                                                       ^6A(?!sh)|^6B|^6C(?!har)|
+                                                       ^7A(?!sh)|^7B|^7C(?!har)|
+                                                       ^8A(?!sh)|^8B|^8C(?!har)|^R", plot.hum2$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE), 
+                                                  grep("b", plot.hum2$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE)))  %>%  
+group_by(PlotNumber) %>% dplyr::mutate(Cuml.Thickness = sum(newDepth, na.rm = TRUE)) #Cumulative thickness for classification
+
+plot.hum4 <- plot.hum2 %>% filter(Horizon %in% c(grep("^A(?!sh)|^B|^C(?!har)|
+                                                       ^IA(?!sh)|^IB|^IC(?!har)|
+                                                       ^IIA(?!sh)|^IIB|^IIC(?!har)|
+                                                       ^IIIA(?!sh)|^IIIB|^IIIC(?!har)|
+                                                       ^IVA(?!sh)|^IVB|^IVC(?!har)|
+                                                       ^VA(?!sh)|^VB|^VC(?!har)|
+                                                       ^VIA(?!sh)|^VIB|^VIC(?!har)|
+                                                       ^VIIA(?!sh)|^VIIB|^VIIC(?!har)|
+                                                       ^VIIIA(?!sh)|^VIIIB|^VIIIC(?!har)|
+                                                       ^1A(?!sh)|^1B|^1C(?!har)|
+                                                       ^2A(?!sh)|^2B|^2C(?!har)|
+                                                       ^3A(?!sh)|^3B|^3C(?!har)|
+                                                       ^4A(?!sh)|^4B|^4C(?!har)|
+                                                       ^5A(?!sh)|^5B|^5C(?!har)|
+                                                       ^6A(?!sh)|^6B|^6C(?!har)|
+                                                       ^7A(?!sh)|^7B|^7C(?!har)|
+                                                       ^8A(?!sh)|^8B|^8C(?!har)|^R", plot.hum2$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE), 
+                                                  grep("b", plot.hum2$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE)))                 
+                                                            
+plot.hum5 <- rbind(plot.hum3, plot.hum4)
+
+plot.hum5$Flag <- "NULL" #For rbind with Mineral
+
+##Mineral
+plot.min2 <- plot.min %>% dplyr::select(PlotNumber, Horizon, UpperDepth, LowerDepth, Texture, Comments) %>% 
+  mutate(Depth = LowerDepth - UpperDepth)
+
+plot.min2 <- plot.min2 %>% mutate(newUpperDepth = ifelse(Depth<0, LowerDepth, UpperDepth)) %>% 
+    mutate(newLowerDepth = ifelse(Depth<0, UpperDepth,LowerDepth)) %>%
+    mutate(newDepth = newLowerDepth - newUpperDepth) %>% dplyr::select(-UpperDepth, -LowerDepth, -Depth) %>% 
+  mutate(Cuml.Thickness = 0, origin = "Mineral") #Cuml.Thickness created for rbind operation
+
+#new changes to mineral
+#Remove Whitespace and some special characters in Horizons
+
+plot.min2$Horizon <- stringr::str_replace_all(plot.min2$Horizon, " ", "")
+plot.min2$Horizon <- stringr::str_replace_all(plot.min2$Horizon, "\\(", "")
+plot.min2$Horizon <- stringr::str_replace_all(plot.min2$Horizon, "\\)", "")
+plot.min2$Horizon <- stringr::str_replace_all(plot.min2$Horizon, "(", "")
+plot.min2$Horizon <- stringr::str_replace_all(plot.min2$Horizon, ")", "")
+plot.min2$Horizon <- stringr::str_replace_all(plot.min2$Horizon, "/", "")
+plot.min2$Horizon <- stringr::str_replace_all(plot.min2$Horizon, "-", "")
+
+#Filter Special  Characters and '0'
+filter_characters <- plot.min2 %>% filter(Horizon %in% c(grep("0", plot.min2$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE),
+                                                             #Keep  '?' for now-#      grep("\\?", plot.min2$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE),
+                                                             grep("\\@", plot.min2$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE),
+                                                             grep("\\*", plot.min2$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE),
+                                                             grep("\\[]", plot.min2$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE),
+                                                             grep("\\!",plot.min2$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE)))
+ 
+PlotNumber_list <- as.list(unique(filter_characters$PlotNumber))
+
+
+plot.min.filter2 <- plot.min2 %>% dplyr::filter(!PlotNumber %in% PlotNumber_list)
+
+
+#Flag PlotNumbers that do not have some combination of A,B,C,R, (I-VIII / 1-8) where Upper Depth is != 0. additionally Excluding "ASH" and "CHAR" 
+flag_plots <- plot.min2 %>% filter(Horizon %in% c(grep("^A(?!sh)|^B|^C(?!har)|
+                                                       ^IA(?!sh)|^IB|^IC(?!har)|
+                                                       ^IIA(?!sh)|^IIB|^IIC(?!har)|
+                                                       ^IIIA(?!sh)|^IIIB|^IIIC(?!har)|
+                                                       ^IVA(?!sh)|^IVB|^IVC(?!har)|
+                                                       ^VA(?!sh)|^VB|^VC(?!har)|
+                                                       ^VIA(?!sh)|^VIB|^VIC(?!har)|
+                                                       ^VIIA(?!sh)|^VIIB|^VIIC(?!har)|
+                                                       ^VIIIA(?!sh)|^VIIIB|^VIIIC(?!har)|
+                                                       ^1A(?!sh)|^1B|^1C(?!har)|
+                                                       ^2A(?!sh)|^2B|^2C(?!har)|
+                                                       ^3A(?!sh)|^3B|^3C(?!har)|
+                                                       ^4A(?!sh)|^4B|^4C(?!har)|
+                                                       ^5A(?!sh)|^5B|^5C(?!har)|
+                                                       ^6A(?!sh)|^6B|^6C(?!har)|
+                                                       ^7A(?!sh)|^7B|^7C(?!har)|
+                                                       ^8A(?!sh)|^8B|^8C(?!har)|^R",
+                                                       plot.min2$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE)) & newUpperDepth ==0)
+
+
+flag_list <- as.list(unique(flag_plots$PlotNumber))
+plot.min2 <- mutate(plot.min2, Flag = ifelse(!plot.min2$PlotNumber %in% flag_list, "Mineral_Flag", "NULL")) #10,586 entries have been flagged. Many of these include profiles with NAs for depths/horizons, or single horizon plots
+
+plot.soil <- rbind(plot.min2, plot.hum5)
+
+```
+
+```{r TEST Loop subset tests- Should be faster- work in progress}
+
+plot.soil2 <- plot.soil %>% dplyr::filter(Flag != "Mineral_Flag")
+
+order_list <- list()
+plots <- unique(plot.soil2$PlotNumber)
+
+system.time(
+  for (i in plots){
+  try({
+    
+    plot_sub <- plot.soil2[plot.soil2$PlotNumber==i,]
+    
+    
+    #OPTION 1: Gone through list of entries, more complicated string for grep  
+        cryosol_test <- filter(plot_sub, Horizon %in% grep("(?<!H)(?<!F)(?<!y)(?<!Fa)(?<!Fm)(?<!Hh)(?<!Ha)(?<!L)(?<!Hm)(?<!H1)(?<!H2)(?<!Hd)(?<!Fq)z(?!j)",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE) & newUpperDepth <=100)
+    
+    #OPTION 2: Simple, only uses Z entries from mineral- could miss Oz entries in humus form sheet
+  #      cryosol_test <- filter(plot_sub, Horizon %in% grep("z(?!j)",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE) & newUpperDepth <=100 & origin = "Mineral")
+
+    cryosol <- ifelse(nrow(cryosol_test) >= 1,  "Cryosol", "FALSE")
+      
+    order_list[[i]] <- cryosol
+      
+      if(order_list[[i]] =="Cryosol")
+      {next}
+     
+    
+    organic_test_1 <- filter(plot_sub, Horizon %in% grep("Of", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newDepth >= 60)
+    organic_test_2 <- filter(plot_sub, Horizon %in% grep("Om|Oh|LFH|O(?!f)(?!ck)(?!ne)", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newDepth >= 40)
+    organic_test_3 <- filter(plot_sub, Cuml.Thickness >= 60)
+
+    organic <- ifelse(nrow(organic_test_1) >= 1 | nrow(organic_test_2) >= 1 | nrow(organic_test_3) >= 1, "Organic", "FALSE")    
+      
+    order_list[[i]] <- organic
+      
+    
+      if(order_list[[i]] =="Organic")
+      {next}
+    
+   
+    vertisol_test_1 <- filter(plot_sub, Horizon %in% grep("(?<!l)v(?!j)", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newUpperDepth <= 100) #FLAG
+    vertisol_test_2 <- filter(plot_sub, Horizon %in% grep("(?<!o)ss(?!j)", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newUpperDepth <= 100 & Texture != "Org") #Texture is used sparingly- in case mineral entries were included in the Humus file
+
+    vertisol <- ifelse(nrow(vertisol_test_1) >=1 & nrow(vertisol_test_2) >=1, "Vertisol", "FALSE")
+
+    order_list[[i]] <- vertisol
+      
+      if(order_list[[i]] == "Vertisol")
+      {next}    
+       
+    podzol_test1 <- filter(plot_sub, Horizon %in% grep("Bf(?!j)|Bhf(?!j)|Bh(?!j)",  plot_sub$Horizon, perl =TRUE, value = T, ignore.case = T) & newDepth >=10)
+    podzol_test2 <- filter(plot_sub, Horizon %in% grep("bt(?!j)",  plot_sub$Horizon, perl =TRUE, value = T, ignore.case = T) & newUpperDepth <=50) #FLAG
+    
+    
+    podzol <- ifelse(nrow(podzol_test1)>=1 & nrow(podzol_test2) <1, "Podzol", "FALSE")
+   
+    order_list[[i]] <- podzol
+   
+      if(order_list[[i]] =="Podzol")
+      {next}
+
+      
+    gleysol_test1 <- filter(plot_sub, Horizon %in% grep("g(?!j)", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) &  newUpperDepth <=50)
+    
+   
+    unique(test$Horizon)
+    
+    order_list[[i]] <- gleysol 
+    
+      if(order_list[[i]] =="Gleysol")
+      {next}
+
+    solonetzic_test <- filter(plot_sub, Horizon %in% grep("Bn(?!j)",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE))
+    
+    solonetzic <- ifelse(nrow(solonetzic_test) >= 1, "Solonetzic", "FALSE")
+    
+    order_list[[i]] <- solonetzic
+   
+      if(order_list[[i]] == "Solonetzic")
+      {next}
+
+    
+    chernozem_test <- filter(plot_sub, Horizon %in% grep("Ah(?!j)(?!b)|Ahe(?!j)(?!b)|Ap(?!j)(?!b)",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newDepth >= 10)
+    
+      
+    chernozem <- ifelse(nrow(chernozem_test) >= 1, "Chernozem", "FALSE")
+    
+    order_list[[i]] <- chernozem
+   
+      if(order_list[[i]] == "Chernozem")
+      {next}
+    
+    luvisol_test <- filter(plot_sub, Horizon %in% grep("Bt(?!j)",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newDepth >= 5)
+    luvisol <- ifelse(nrow(luvisol_test) >= 1, "Luvisol", "FALSE")
+    
+    order_list[[i]] <- luvisol
+   
+      if(order_list[[i]] == "Luvisol")
+      {next}
+
+    brunisol_test <- filter(plot_sub, Horizon %in% grep("B",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE) & newDepth >= 5) #this might be a problem with buried horizons, have taken out the ignore case element for now
+    
+    brunisol <- ifelse(nrow(brunisol_test) >= 1, "Brunisol", "FALSE")
+   
+    order_list[[i]] <- brunisol
+   
+      if(order_list[[i]] == "Brunisol")
+      {next}
+  
+    regosol_test <- filter(plot_sub, newDepth >= 0)
+    
+    regosol <- ifelse(nrow(regosol_test) >=1, "Regosol", "FALSE")
+    
+    order_list[[i]] <- regosol
+    
+    })
+  }
+)
+27277.46 /60/60
+
+
+output <- do.call(rbind, order_list)
+output2 <- cbind(rownames(output), output)
+output2 <- as.data.frame(output2) %>% dplyr::rename(PlotNumber=V1, Order = V2)
+soil_order <- full_join(output2, plot.soil2)
+
+```
+
+```{r loop subset tests RBIND() is way too slow- needs a better alternative}
+
+plot.soil2 <- plot.soil[1:100,]
+
+plots <- unique(plot.soil2$PlotNumber)
+loop_results <- data.frame()
+
+system.time(
+  for (i in plots){
+  try({
+    
+    plot_sub <- plot.soil2[plot.soil2$PlotNumber==i,]
+   
+    cryosol_test <- filter(plot_sub, Horizon %in% grep("z(?!j)",  plot_sub$Horizon, perl =TRUE, value = T, ignore.case = T) & newUpperDepth <=100)
+    
+    cryosol <- plot_sub %>% mutate(Class = case_when(nrow(cryosol_test)>=1  ~ "Cryosol"))
+    
+    temp <- data.frame(cryosol)
+    temp <- dplyr::filter(temp, Class == "Cryosol")
+    
+  
+    loop_results <- rbind(loop_results, temp)
+    cryosol <- dplyr::filter(loop_results, Class == "Cryosol" )
+    
+    cryosol_list <- unique(cryosol$PlotNumber)
+    
+    
+    if(i %in% cryosol_list)
+      
+    {next}
+    
+    organic_test_1 <- filter(plot_sub, Horizon %in% grep("Of", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newDepth >= 60)
+    organic_test_2 <- filter(plot_sub, Horizon %in% grep("Om|Oh|LFH|O(?!ck)(?!ne)",plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newDepth >= 40)
+    organic_test_3 <- filter(plot_sub, Cuml.Thickness >= 60)
+    organic <- plot_sub %>% mutate(Class = case_when(nrow(organic_test_1) >= 1 ~ "Organic",
+                                                     nrow(organic_test_2) >= 1 ~ "Organic",
+                                                     nrow(organic_test_3) >= 1 ~ "Organic"))    
+    
+    temp <- data.frame(organic)
+    temp <- dplyr::filter(temp, Class == "Organic")
+    
+    loop_results <- rbind(loop_results, temp)
+    
+    organic <- dplyr::filter(loop_results, Class == "Organic" )
+    organic_list <- unique(organic$PlotNumber)
+    
+    if(i %in% organic_list)
+    
+    {next}
+    
+    vertisol_test_1 <- filter(plot_sub, Horizon %in% grep("v(?!j)", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newUpperDepth <= 100)
+    vertisol_test_2 <- filter(plot_sub, Horizon %in% grep("ss(?!j)", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newUpperDepth <= 100)
+    
+    vertisol <- plot_sub %>% mutate(Class = case_when(nrow(vertisol_test_1) >=1 & nrow(vertisol_test_2) >=1 ~ "Vertisol"))
+
+    temp <- data.frame(vertisol)
+    temp <- dplyr::filter(temp, Class == "Vertisol")
+    
+    loop_results <- rbind(loop_results, temp)
+    
+    vertisol <- dplyr::filter(loop_results, Class == "Vertisol" )
+    vertisol_list <- unique(vertisol$PlotNumber)
+    
+    
+    if(i %in% vertisol_list)
+    {next}
+    
+    podzol_test1 <- filter(plot_sub, Horizon %in% grep("Bf(?!j)|Bhf(?!j)|Bh(?!j)",  plot_sub$Horizon, perl =TRUE, value = T, ignore.case = T) & newDepth >=10)
+    podzol_test2 <- filter(plot_sub, Horizon %in% grep("bt(?!j)",  plot_sub$Horizon, perl =TRUE, value = T, ignore.case = T) & newUpperDepth <=50)
+    
+    podzol <- plot_sub %>% mutate(Class = case_when(nrow(podzol_test1)>=1 & nrow(podzol_test2) <1 ~ "Podzol"))
+    
+    
+    temp <- data.frame(podzol)
+    temp <- dplyr::filter(temp, Class == "Podzol")
+    
+    loop_results <- rbind(loop_results, temp)
+    
+    podzol <- dplyr::filter(loop_results, Class == "Podzol" )
+    podzol_list <- unique(podzol$PlotNumber)
+    
+    
+    if(i %in% podzol_list)
+      
+    {next}
+    
+    gleysol_test1 <- filter(plot_sub, Horizon %in% grep("g(?!j)", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) &  newUpperDepth <=50)
+    
+    gleysol <- plot_sub %>% mutate(Class = case_when(nrow(gleysol_test1) >= 1 ~ "Gleysol"))
+    
+    temp <- data.frame(gleysol)
+    temp <- dplyr::filter(temp, Class == "Gleysol")
+    
+    loop_results <- rbind(loop_results, temp)
+    gleysol <- dplyr::filter(loop_results, Class == "Gleysol" )
+    gleysol_list <- unique(gleysol$PlotNumber)
+    
+    if(i %in% gleysol_list)
+    {next}
+   
+    solonetzic_test <- filter(plot_sub, Horizon %in% grep("Bn(?!j)",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE))
+    solonetzic <- plot_sub %>% mutate(Class = case_when((nrow(solonetzic_test) >= 1 ~"Solonetzic")))
+    
+    temp <- data.frame(solonetzic)
+    temp <- dplyr::filter(temp, Class == "Solonetzic")
+    
+    loop_results <- rbind(loop_results, temp)
+    
+    solonetzic <- dplyr::filter(loop_results, Class == "Solonetzic" )
+    solonetzic_list <- unique(solonetzic$PlotNumber)
+    
+    if(i %in% solonetzic_list)
+    {next}
+    
+    chernozem_test <- filter(plot_sub, Horizon %in% grep("Ah(?!j)(?!b)|Ahe(?!j)(?!b)|Ap(?!j)(?!b)",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newDepth >= 10)
+    chernozem <- plot_sub %>% mutate(Class = case_when((nrow(chernozem_test) >= 1 ~"Chernozem")))
+    
+    temp <- data.frame(chernozem)
+    temp <- dplyr::filter(temp, Class == "Chernozem")
+    
+    loop_results <- rbind(loop_results, temp)
+    
+    chernozem <- dplyr::filter(loop_results, Class == "Chernozem" )
+    chernozem_list <- unique(chernozem$PlotNumber)
+    
+    if(i %in% chernozem_list)
+    {next}
+    
+    luvisol_test <- filter(plot_sub, Horizon %in% grep("Bt(?!j)",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & newDepth >= 5)
+    luvisol <- plot_sub %>% mutate(Class = case_when((nrow(luvisol_test) >= 1 ~"Luvisol")))
+    
+    temp <- data.frame(luvisol)
+    temp <- dplyr::filter(temp, Class == "Luvisol")
+    loop_results <- rbind(loop_results, temp)
+    
+    luvisol <- dplyr::filter(loop_results, Class == "Luvisol" )
+    luvisol_list <- unique(luvisol$PlotNumber)
+    
+    if(i %in% luvisol_list)
+    {next}
+    
+    brunisol_test <- filter(plot_sub, Horizon %in% grep("B",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE) & newDepth >= 5) #this might be a problem with buried horizons, have taken out the ignore case element for now
+    brunisol <- plot_sub %>% mutate(Class = case_when((nrow(brunisol_test) >= 1 ~"Brunisol")))
+    
+    temp <- data.frame(brunisol)
+    temp <- dplyr::filter(temp, Class == "Brunisol")
+    
+    loop_results <- rbind(loop_results, temp)
+    
+    brunisol <- dplyr::filter(loop_results, Class =="Brunisol")
+    brunisol_list <- unique(brunisol$PlotNumber)
+    
+    if(i %in% brunisol_list)
+    {next}
+    
+    regosol_test <- filter(plot_sub, newDepth >= 0)
+    
+    regosol <- plot_sub %>% mutate(Class = case_when(nrow(regosol_test) >=1 ~ "Regosol"))
+    
+    temp <- data.frame((regosol))
+   
+    
+    loop_results <- rbind(loop_results, temp)
+   
+    
+    
+    })
+  }
+)
+```
+
+```{r Texture fix (older), echo =T}
+
+
+
+Texture_to_fix <- data.frame(Texture.Unique = unique(plot.min2$Texture))
+fwrite(Texture_to_fix, file = "./lookups/to_update_soil_textures.csv")
+
+
+## Lookup table fix of texture codes
+texture.fix <- fread("./out_data/badtexturecodestofix.csv") %>% dplyr::filter(!Texture_new == "")
+plot.min2[texture.fix, Texture := i.Texture_new, on = "Texture"]
+plot.min2$Texture <- plot.min2$Texture %>% toupper() %>% str_replace("SI", "Si")
+min_texture.codes <- plot.min2$Texture %>% as.data.frame %>%
+       drop_na() %>% filter(. != "") %>% dplyr:: rename("Texture" = 1) %>% count("Texture")
+#fwrite(min_texture.codes, "./out_data/texturecodegroups.csv")
+
+texture.codes <- codes %>% filter(ListName == "SoilTexture") %>% dplyr::rename("Texture" = Item)
+min_texure.bad <- anti_join(min_texture.codes, texture.codes)
+#fwrite(min_texure.bad, "./out_data/badtexturecodestofix.csv")
+
+
+```
+
+```{r Conditional tests storage, echo = TRUE}
+
+
+#Cryosol
+
+cryosol_test <- filter(plot_sub, Horizon %in% grep("z(?!j)",  plot_sub$Horizon, perl =TRUE, value = T, ignore.case = T) & Udepth <=100)
+
+
+#Organic INCOMPLETE I May have to filter out all entries containing an O, and create a cumulative thickness 
+
+organic_test_1 <- filter(plot_sub, Horizon %in% grep("Of", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & Thick <= 60)
+organic_test_2 <- filter(plot_sub, Horizon %in% grep("Om|Oh|LFH|O",plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & Thick <= 40)
+organic_test_3 <- filter(plot_sub, Cuml.Thickness >= 60)
+
+#Vertisolic
+
+vertisol_test_1 <- filter(plot_sub, Horizon %in% grep("v(?!j)", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & Udepth <= 100)
+vertisol_test_2 <- filter(plot_sub, Horizon %in% grep("ss(?!j)", plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & Udepth <= 100)
+
+#Podzolic
+
+ podzol_test_1 <- filter(plot_sub, Horizon %in% grep("(Bf(?!j)|Bhf(?!j)|Bh(?!j))",  plot_sub$Horizon, perl =TRUE, value = T, ignore.case = T) & Thick >=10)
+ podzol_test2 <- filter(plot_sub, Horizon %in% grep("bt(?!j)",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = T) & uDepth <=50)
+
+
+#Gleysolic
+
+gleysol_test <- filter(plot_sub, Horizon %in% grep("(g(?!j))",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE), & Udepth <= 50)
+
+#Solonetzic
+
+solonetz_test <- filter(plot_sub, Horizon %in% grep("Bn(?!j))",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE))
+
+#Chernozemic
+
+chernozem_test <- filter(plot_sub, Horizon %in% grep("Ah(?!j)|Ahe(?!j)|Ap(?!j))",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & Thick >= 10)
+
+#Luvisolic
+
+luvisol_test <- filter(plot_sub, Horizon %in% grep("Bt(?!j))",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & Thick >= 5)
+
+#Brunisolic
+
+brunisol <- filter(plot_sub, Horizon %in% grep("B",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = FALSE) & Thick >= 5) #this might be a problem distinguishing buried horizons..... Ignore Case was set to false to filter out 'b' horizon suffixes
+
+#Regosolic
+
+#Catch all?
+
+```

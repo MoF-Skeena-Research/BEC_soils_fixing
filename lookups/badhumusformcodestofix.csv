@@ -1,0 +1,444 @@
+HumusForm,HumusForm_new,HumusFormPhase_new
+-,X,
+ D,D,
+ HR,HR,
+ L,L,
+ R,R,
+ SD,SD,
+ SL,SD,
+ UR,UR,
+(t)d,TD,
+(t)D,TD,
+.FR,FR,
+.HF,,
+.HR,HR,
+.HUR,UR,
+.ID,MR,
+.IR,FR,
+.IR.,FR,
+.LD,Lld,
+.LR,LR,
+.MD,MD,
+.MR,MR,
+.PD,D,
+.RD,RD,
+.RL,ZL,
+.SL,SD,
+.TD,TD,
+.UR,UR,
+.VL,VL,
+.WD,ZL,vl
+.WR,HR,vl
+.XD,RD,xe
+.XR,HR,xe
+.YD,YD,
+.YL,YL,
+.YR,YR,
+.ZL,VL,
+;O H,,
+?,,
+0 IR,FR,
+0 XR,HR,xe
+0.IR,FR,
+0.SL,SD,
+0.YR,YR,
+0.ZL,ZL,
+0HR,HR,O
+0HUR,UR,
+A HR,HR,
+A RD,RD,
+A TD,TD,
+A UR,UR,
+A XR,UR,xe
+A.HR,HR,
+A.ID,MR,
+A.MD,D,
+A.PD,,
+A.RD,RD,
+A.TD,TD,
+A.UR,UR,
+A.VD,,
+A.VR,UR,
+A.WR,HR,vl
+A.XD,RD,xe
+A.XR,UR,xe
+A>TD,TD,
+AHUR,UR,
+AMD,D,
+APD,,
+ARD,RD,
+ATD,TD,
+AUR,UR,
+AVD,,
+AWR,HR,vl
+AXD,RD,xe
+AXR,UR,xe
+B ID,MR,
+B.ID,MR,
+B.LD,MD,
+B.UR,UR,
+BHUR,UR,
+C FR,FR,
+C.MU,L,
+C.ZL,VL,
+d,,
+D.MR,R,
+D.MU,L,
+D?,,
+E.YD,YD,
+EYD,YD,
+F,,
+F IR,FR,
+F MR,HR,
+F UR,UR,
+F.ID,MR,
+F.IR,FR,
+F.MD,D,
+F.MR,HR,
+FD,,
+FMR,HR,
+F-MR,HR,
+F-RT,,
+G.HU,UR,
+G.MR,R,
+G.UR,UR,
+GHUR,UR,gr
+GL,,
+GRMR,R,gr
+H ID,MR,hi
+H MR,MR,hi
+H TD,TD,
+H YR,YR,hi
+H.ID,MR,
+H.IR,FR,
+H.MD,D,
+H.MR,UR,
+H.PD,,
+H.R,,
+H.RD,RD,
+H.TD,TD,
+H.UR,UR,
+H.YR,YR,hi
+HC,,
+HD,YD,
+HD/X,YD,
+HDMD,YD,
+HDMR,YR,
+HDMU,YL,
+HDMu,YL,
+HE,HR,
+HEMR,HR,
+HFR,FR,
+HH,YR,
+HHMR,HR,
+HHR,HR,
+HHUR,UR,
+HISD,SD,
+HL,,
+hl,,
+hm,,
+HM,YD,
+HM,HR,
+HM/H,YD,
+HML,YL,
+HMR,UR,
+H-MR,UR,
+HPD,,
+Hr,HR,
+hr,HR,
+HR?,HR,
+HRUR,UR,
+HSL,SD,
+HT,FR,
+hu,UR,
+HU,UR,
+HU.R,UR,
+HUMR,UR,
+HUR,UR,
+HUR,UR,
+hur,UR,
+HY,,
+HYDD,YD,
+hydr,YD,
+HYDR,YD,
+HYMD,D,
+HYR,YR,hi
+I SL,SD,
+I.SL,SD,
+ID,MR,
+id,MR,
+ID,MR,
+IR,FR,
+iR,FR,
+IR,FR,
+ISL,SD,
+J.VL,VL,
+JVL,VL,
+l,,
+L HR,LR,
+L UR,LR,
+L XR,LR,
+L.HR,LR,
+L.MD,MD,li
+L.UR,LR,
+L.XR,LR,
+L/D,MD,li
+L?,,li
+LDMR,RD,li
+LEMD,D,li
+LEPD,,li
+LEPR,,li
+LH,,li
+LHR,LR,
+LHUR,LR,
+LM,LR,
+LO,,
+lr,LR,
+LRHR,HR,LR
+LUR,UR,L
+M,R,
+M HR,HR,M
+M MD,MD,
+M RD,RD,M
+M.HR,HR,M
+M.MD,MD,
+M.MU,L,
+M.RD,RD,M
+M.UR,UR,M
+M.XD,RD,xe
+M.XR,HR,
+MD?,MD,
+MDR,HR,
+mesi,,
+MH,,
+MHR,HR,
+MHUR,UR,
+ML,L,
+MM,RD,
+MMDR,RD,
+MO,,
+MO,R,
+MOD,D,
+MODR,D,
+mor,R,
+MOR,R,
+Mor,R,
+MORD,RD,M
+MRD,RD,M
+MRMD,RD,
+MTD,TD,M
+MU,L,
+MUL,L,
+MULD,L,
+N.PD,,
+O,,
+o,,
+O HD,YD,ty
+O HR,HR,ty
+O ID,MR,ty
+O IR,FR,ty
+O LD,LD,ty
+O MD,TD,ty
+O RD,RD,ty
+O TD,TD,ty
+O UR,UR,ty
+O WR,HR,vl
+O XR,HR,xe
+O YD,YD,ty
+O YR,YR,ty
+O.FR,FR,ty
+O.HR,HR,ty
+O.HU,UR,ty
+O.ID,MR,ty
+O.IL,SD,ty
+O.IR,FR,ty
+O.LD,LD,ty
+O.MD,TD,ty
+O.MR,HR,ty
+O.PD,,ty
+O.RD,RD,ty
+O.RR,RR,ty
+O.SL,SD,ty
+O.SR,FR,ty
+O.TD,TD,ty
+O.UR,UR,ty
+O.VD,RD,vl
+O.VL,VL,ty
+O.VR,HR,vl
+O.WD,ZL,vl
+O.WR,HR,vl
+O.XD,RD,xe
+O.XR,HR,xe
+O.YD,YD,ty
+O.YL,YL,ty
+O.YR,YR,ty
+O.ZL,VL,ty
+Of,FR,
+OF,FR,
+OHR,HR,ty
+OHRD,RD,ty
+OHUM,UR,ty
+OHUR,UR,ty
+OID,MR,ty
+OIR,FR,ty
+OLD,,
+Om,MR,
+OMD,TD,
+OPD,,ty
+ORD,RD,ty
+org,,
+ORML,ZL,
+OSL,SD,ty
+OTD,TD,ty
+OUR,UR,ty
+OVL,VL,
+OWR,HR,vl
+OXD,RD,xe
+OXR,HR,xe
+OYD,YD,ty
+OYL,YL,ty
+OYR,YR,ty
+OZL,VL,ty
+P SL,SD,
+P.MD,TD,
+P.MR,FR,
+P.SL,SD,
+P.UR,UR,
+P.XD,RD,xe
+pd,,
+PSL,SD,
+PXD,RD,xe
+Q WR,HR,vl
+Q.SL,SD,
+QSL,SD,
+QWR,HR,vl
+r,R,
+R HR,RR,re
+R YR,YR,re
+R.HR,RR,
+R.HU,UR,re
+R.M,RR,
+R.MD,RD,re
+R.MU,ZL,re
+R.UR,UR,re
+R/D,RD,re
+rd,RD,re
+Rd,RD,re
+RD?,RD,re
+RHIL,,
+RHR,RR,re
+RHUR,RR,re
+RL,ZL,
+rl,ZL,
+rm,RR,
+RM,RR,re
+RML,ZL,
+RMU,ZL,re
+RUR,UR,re
+RYR,YR,re
+S ID,MR,
+S RD,RD,
+S YL,YL,
+S YR,YR,hi
+S.1D,MR,
+S.ID,MR,
+S.IR,FR,hi
+S.YD,YD,hi
+S.YL,YL,
+S.YR,YR,hi
+SAPL,SD,
+sD,SD,
+SHIL,,
+SIR,FR,
+SL,SD,
+sl,SD,
+SL,SD,
+SP,,
+SP,RD,vl
+SR,YR,
+SYD,YD,hi
+SYR,YR,hi
+T.HR,HR,ty
+T.RR,RR,ty
+td,TD,
+Td,TD,
+TD/M,TD,
+TD?,TD,
+TO,,
+TR,,
+TRAC,none,
+U RD,RD,U
+U SL,SD,
+U.HD,YD,
+U.LD,LD,
+U.MD,TD,
+U.OR,,
+U.R,HR,
+U.RD,RD,U
+U.YL,YL,U
+UD,,
+UHMD,TD,
+UMD,TD,
+ur,UR,
+UR/D,UR,
+URD,RD,U
+USL,SD,
+UYL,YL,U
+V.FR,FR,vl
+V.LD,LD,vl
+VD,RD,vl
+vd,RD,vl
+VE,HR,vl
+VELD,TD,vl
+VELM,HR,vl
+VELR,HR,vl
+VERL,HR,vl
+VFUR,UR,VF
+VL?,VL,vl
+VLD,TD,vl
+VLTD,TD,vl
+VMD,TD,vl
+VMR,HR,vl
+VR,HR,vl
+vr,HR,vl
+WD,ZL,vl
+WR,HR,vl
+WR,HR,vl
+X,none,
+x,none,
+X ZL,VL,xe
+X.MD,TD,xe
+X.MR,HR,xe
+X.RL,ZL,xe
+X.ZL,VL,xe
+XD,RD,xe
+xd,RD,xe
+XE,HR,
+xero,HR,he
+XERR,HR,
+xl,ZL,
+XL,ZL,
+XM,R,
+XML,ZL,
+XR,HR,
+xr,HR,
+XR,HR,xe
+XRML,ZL,xe
+XX,X,
+XX,X,
+XZL,ZL,
+Y IR,FR,
+Y.ID,MR,
+Y.IR,FR,
+Y.R,YR,
+Y.SL,SD,
+yD,YD,
+YSL,SD,
+Z.LD,LD,
+ZD,RD,xe
+zl,Zl,
+Zl,Zl,
+ZLD,Zl,xe
+ZML,Zl,xe
+ZR,HR,xe
+zzl,Zl,xe

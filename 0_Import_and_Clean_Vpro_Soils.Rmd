@@ -1,0 +1,307 @@
+---
+title: "Initial fixes for BECMaster Soils"
+author: "William H MacKenzie"
+date: "18/12/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(reshape)
+require(reshape2)
+require(vegan)
+require(caret)
+require(tcltk)
+require(randomForest)
+require(Matrix)
+require(labdsv)
+require(gdata)
+require(MASS)
+require(openxlsx)
+require (C50)
+require(tidyr)
+require(stringr)
+require(rpart)
+require(tree)
+require(rattle)
+require(rpart.plot)
+require(partykit)
+require(vegclust)
+require(standardize)
+require(dplyr)
+require(tictoc)
+require(plyr)
+require(Hmisc)
+require(data.table)
+require(tidyverse)
+require(psych)
+require(DataExplorer)
+
+```
+# Background
+
+This script links to a VPRO database and brings in _ENV, _MIN, _HUMUS tables for fixing 
+1. fixes horizon labels formatting for both mineral and humus horizons
+2. fixes obvious mixups in soil classification with lookup table
+3. rules based soil classification
+4. fix horizon upper/lower depth mix-ups
+
+
+```{r import data}
+require(DBI) #loads odbc as well
+ becmaster <- dbConnect(odbc::odbc(), .connection_string = "Driver={Microsoft Access Driver (*.mdb, *.accdb)}; DBQ=D:/GitHub/BECMaster_Cleaning/updated_vpro/BECMaster_fixing.accdb;")
+
+plot.env <- dbReadTable(becmaster, "BECMaster_fixing_Env") %>% mutate(Longitude = ifelse(Longitude<0, Longitude, 0-Longitude)) %>% mutate(Date = as_date(Date))
+plot.info <- dbReadTable(becmaster, "BECMaster_fixing_Admin")
+plot.min <- dbReadTable(becmaster, "BECMaster_fixing_Mineral")
+plot.humus <- dbReadTable(becmaster, "BECMaster_fixing_Humus")
+plot.env.fields <- colnames(plot.env)
+odbc::odbcListColumns(becmaster, table = "BECMaster_fixing_Env")
+dbDisconnect(becmaster)
+codes <- fread("./lookups/TableofCodes.csv", header = T, stringsAsFactors = F, strip.white = T, data.table = T)
+```
+
+### Fix horizon labels with lookup tables
+
+
+```{r clean mineral horizon codes}
+minhoriz.codes <- plot.min %>% count("Horizon")
+#fwrite(minhoriz.codes, "./lookups/bad_mineral_horizon_codes_new.csv")
+### update obvious bad coding
+min.code <- fread("./lookups/bad_mineral_horizon_codes_new.csv")
+plot.min <- setDT(plot.min)[min.code, Horizon := Horizon_new, on = .(Horizon)]  %>% arrange(desc(PlotNumber))
+plot.min$Horizon <- plot.min$Horizon %>% stringr::str_trim()%>% stringr::str_squish() %>% str_replace_all(.," ", "")
+
+plot.min <- plot.min %>%  mutate(across(everything(),~ str_remove_all(., '"'))) %>% dplyr::select(-Comments, -Flag, -ID)
+fwrite(plot.min, "./clean_data/Mineral_HorizonCode_updated.csv", row.names = FALSE, col.names = TRUE)
+
+```
+
+```{r fix mineral horizon depth orders and data coding issues}
+#Add total depths
+plot.min2 <- plot.min %>% dplyr::select(PlotNumber, Horizon, UpperDepth, LowerDepth, Texture, PercentCoarseFragsTotal) %>% 
+  mutate(Depth = LowerDepth - UpperDepth)
+
+plot.min2 <- plot.min2 %>% mutate(newUpperDepth = ifelse(Depth<0, LowerDepth, UpperDepth)) %>% 
+    mutate(newLowerDepth = ifelse(Depth<0, UpperDepth,LowerDepth)) %>% 
+  mutate(newDepth = newLowerDepth - newUpperDepth) %>% dplyr::select(-UpperDepth, -LowerDepth, -Depth)
+
+plot.min2$Texture <- plot.min2$Texture %>% toupper() %>% str_replace("SI", "Si") %>% str_trim()
+
+## Lookup table fix of texture codes
+texture.fix <- fread("./out_data/badtexturecodestofix.csv") %>% dplyr::filter(!Texture_new == "")
+plot.min2[texture.fix, Texture := i.Texture_new, on = "Texture"]
+plot.min2$Texture <- plot.min2$Texture %>% toupper() %>% str_replace("SI", "Si")
+min_texture.codes <- plot.min2$Texture %>% as.data.frame %>%
+       drop_na() %>% filter(. != "") %>% dplyr:: rename("Texture" = 1) %>% count("Texture")
+#fwrite(min_texture.codes, "./out_data/texturecodegroups.csv")
+
+texture.codes <- codes %>% filter(ListName == "SoilTexture") %>% dplyr::rename("Texture" = Item)
+min_texure.bad <- anti_join(min_texture.codes, texture.codes)
+#fwrite(min_texure.bad, "./out_data/badtexturecodestofix.csv")
+```
+
+```{r clean humus horizon codes}
+plot.humus$Horizon <- plot.humus$Horizon %>% stringr::str_trim() %>% stringr::str_squish()
+humus_horizons <- plot.humus$Horizon %>% as.data.frame %>%
+       drop_na() %>% filter(. != "") %>% dplyr:: rename("Horizon" = 1) %>% 
+   group_by(Horizon) %>% tally()
+fwrite(humus_horizons, "./out_data/Unique_Humus_Horizons.csv", row.names = FALSE, col.names = TRUE)
+
+humus_horizons2 <- humus_horizons %>% filter(n>100)
+###bar chart of count of codes in dataset
+ggplot(humus_horizons2, aes(x = reorder(Horizon, -n), y = n)) + geom_bar(stat = "identity")
+
+fwrite(plot.humus, "./clean_data/Humus_Horizons_updates.csv", row.names = FALSE, col.names = TRUE)
+```
+
+### Fix and update humus classification with lookup table
+```{r humus classification repair}
+plot.humusclass <- plot.env %>% dplyr::select(PlotNumber, HumusForm, HumusFormPhase) %>% data.frame
+
+## fix case and update from lookup table
+plot.humusclass <- plot.humusclass %>% data.frame %>% mutate(HumusForm = toupper(HumusForm))
+humus.codes <- codes %>% filter(ListName == "HumusForm") %>% dplyr::rename("HumusForm" = Item)
+humus.fix <- fread("./lookups/badhumusformcodestofix.csv", data.table = T) %>% dplyr::filter(!HumusForm_new == "")
+setDT(plot.humusclass)[humus.fix,  HumusFormPhase := HumusFormPhase_new, on = .(HumusForm)]
+setDT(plot.humusclass)[humus.fix,  HumusForm := HumusForm_new, on = .(HumusForm)]
+
+fwrite(plot.humusclass, "./clean_data/humusformclass_fixed.csv")
+# ##remove spaces
+# plot.humusclass$HumusForm <- stringr::str_trim(plot.humusclass$HumusForm, side = "both") %>% stringr::str_squish()
+# ## remove leading periods
+# plot.humusclass2 <- plot.humusclass %>% filter(grepl("^[.]", HumusForm))
+# plot.humusclass2$HumusForm_new <- str_replace_all(plot.humusclass2$HumusForm,"[.]", "")
+# setDT(plot.humusclass)[plot.humusclass2, HumusForm := HumusForm_new, on = "PlotNumber"]
+# 
+# #plot.humusclass <- plot.humusclass %>% data.frame %>% mutate(HumusForm = ifelse(HumusForm == "NA", "X", HumusForm))
+# 
+# ## split codes with periods
+# plot.humusclass2 <- as.data.frame(plot.humusclass) %>% filter(grepl("[.]", HumusForm)) 
+# plot.humusclass2[c('HumusFormPhase_new', 'HumusForm_new')] <- str_split_fixed(plot.humusclass2$HumusForm, '[.]', 2)
+# setDT(plot.humusclass)[plot.humusclass2, HumusForm := HumusForm_new, on = "PlotNumber"]
+# setDT(plot.humusclass)[plot.humusclass2, HumusFormPhase := HumusFormPhase_new, on = "PlotNumber"]
+# 
+# ## split codes with space
+# plot.humusclass2 <- as.data.frame(plot.humusclass) %>% filter(grepl(" ", HumusForm)) 
+# plot.humusclass2[c('HumusFormPhase_new', 'HumusForm_new')] <- str_split_fixed(plot.humusclass2$HumusForm, ' ', 2)
+# setDT(plot.humusclass)[plot.humusclass2, HumusForm := HumusForm_new, on = "PlotNumber"]
+# setDT(plot.humusclass)[plot.humusclass2, HumusFormPhase := HumusFormPhase_new, on = "PlotNumber"]
+# 
+# ## fix case and update from lookup table
+# plot.humusclass <- plot.humusclass %>% data.frame %>% mutate(HumusForm = toupper(HumusForm))
+# humus.codes <- codes %>% filter(ListName == "HumusForm") %>% dplyr::rename("HumusForm" = Item)
+# humus.fix <- fread("./lookups/badhumusformcodestofix.csv", data.table = T) %>% dplyr::filter(!HumusForm_new == "")
+# setDT(plot.humusclass)[humus.fix, HumusFormnew := HumusForm_new, on = .(HumusForm)] %>% arrange(desc(PlotNumber))
+# fwrite(plot.humusclass, "./clean_data/Humus_Class_updated.csv", row.names = FALSE, col.names = TRUE)
+# 
+# 
+# bad.humus <- anti_join(plot.humusclass, humus.codes)
+# bad.humus.form <- bad.humus %>% as.data.frame %>%
+#    group_by(HumusForm) %>% tally() %>% filter(n>5)
+# ###bar chart of count of codes in dataset
+# ggplot(bad.humus.form, aes(x = reorder(HumusForm, -n), y = n)) + geom_bar(stat = "identity")
+# 
+# 
+# #bad.humus$HumusForm <- bad.humus$HumusForm
+# bad.humus.codes <- bad.humus %>% dplyr::select(HumusForm) %>% unique
+# #fwrite(bad.humus.codes, "./out_data/badcodestofix.csv")
+# 
+# ```
+# 
+# 
+# #### Soil classification
+# Many bad codes, truncated codes, reversal of subgroup and group codes, and wrong classifications (based on horizon info). Automatic updates in many cases are probably not universally correct.  Need Rules based classification in part
+# ```{r soil classification repair}
+# plot.env$SoilClassGroup <-  plot.env$SoilClassGroup %>% stringr::str_trim() %>% stringr::str_squish()
+# plot.soilclass <- plot.env %>% dplyr::select(PlotNumber, SoilClassGroup, SoilClassSubGroup) %>% data.frame
+# soil.classes <- codes %>% filter(ListName == "SoilClassGroup") %>% dplyr::rename("SoilClassGroup" = Item)
+# soil.subgroups <- codes %>% filter(ListName == "SoilClassSubGroup") %>% dplyr::rename("SoilClassSubGroup" = Item)
+# 
+# ##update based on lookup table
+# soil.fix <- fread("./out_data/bad_soilGroups_update2.csv", data.table = T, strip.white = F)%>% filter(!Group_updated == "")
+# #soil.fix[soil.fix == ""] <- NA
+# setDT(plot.soilclass)[soil.fix, c("SoilClassGroup", "SoilClassSubGroup") := list(Group_updated, SubGroup_updated), on = .(SoilClassGroup, SoilClassSubGroup)]
+# plot.soilclass1 <- plot.soilclass %>% filter(!is.na(SoilClassGroup)) %>% arrange(desc(PlotNumber))
+# fwrite(plot.soilclass1, "./clean_data/soilclass_updates.csv")
+# plot.soilclass.sum <- plot.soilclass1 %>% dplyr::select(-PlotNumber) %>%  group_by(SoilClassGroup, SoilClassSubGroup) %>% tally() 
+# fwrite(plot.soilclass.sum, "./out_data/all_soilclass.csv")
+# bad.soil.class2 <- anti_join(plot.soilclass, soil.classes, by="SoilClassGroup") %>% dplyr::select(-PlotNumber) %>%  group_by(SoilClassGroup, SoilClassSubGroup) %>% tally() 
+# fwrite(bad.soil.class2, "./out_data/bad_soilGroups.csv")
+
+
+# ## create other fixes
+# ##remove spaces
+# plot.soilclass$Group_updated <-   stringr::str_trim(plot.soilclass$SoilClassGroup, side = "both") %>% stringr::str_squish()
+# plot.soilclass$SubGroup_updated <-   stringr::str_trim(plot.soilclass$SoilClassSubGroup, side = "both") %>% stringr::str_squish()
+# plot.soilclass <- plot.soilclass %>%   mutate_all(list(~na_if(., ""))) %>%  mutate_all(list(~na_if(.," "))) %>%  mutate_all(list(~na_if(.,"  "))) %>%  mutate_all(list(~na_if(.,"   ")))%>%  mutate_all(list(~na_if(.,"    ")))%>%  mutate_all(list(~na_if(.,"     "))) %>% filter(!is.na(SoilClassGroup) | !is.na(SoilClassSubGroup) )
+# plot.soilclass <- plot.soilclass %>% data.frame %>% mutate(Group_updated = toupper(Group_updated), SubGroup_updated = toupper(SubGroup_updated))
+# 
+# ## remove leading periods
+# plot.soilclass2 <- plot.soilclass %>% filter(grepl("^[.]", SoilClassGroup))
+# plot.soilclass2$SoilClassGroup_new <- str_replace_all(plot.soilclass2$SoilClassGroup,"[.]", "")
+# setDT(plot.soilclass)[plot.soilclass2, Group_updated  := SoilClassGroup_new, on = "PlotNumber"]
+# #plot.soilclass <- plot.soilclass %>% data.frame %>% mutate(Group_updated  = ifelse(Group_updated  == "NA", "X", Group_updated ))
+# 
+# ## split codes with periods
+# plot.soilclass2 <- as.data.frame(plot.soilclass) %>% filter(grepl("[.]", SoilClassGroup)) 
+# plot.soilclass2[c('SoilClassGroup_new', 'SoilClassSubGroup_new')] <- str_split_fixed(plot.soilclass2$SoilClassGroup, '[.]', 2)
+# setDT(plot.soilclass)[plot.soilclass2, Group_updated  := SoilClassGroup_new, on = "PlotNumber"]
+# setDT(plot.soilclass)[plot.soilclass2, SubGroup_updated := SoilClassSubGroup_new, on = "PlotNumber"]
+# 
+# ## split codes with space
+# plot.soilclass2 <- as.data.frame(plot.soilclass) %>% filter(grepl(" ", SoilClassGroup)) 
+# plot.soilclass2[c('SoilClassGroup_new', 'SoilClassSubGroup_new')] <- str_split_fixed(plot.soilclass2$SoilClassGroup, ' ', 2)
+# setDT(plot.soilclass)[plot.soilclass2, Group_updated := SoilClassGroup_new, on = "PlotNumber"]
+# setDT(plot.soilclass)[plot.soilclass2, SubGroup_updated := SoilClassSubGroup_new, on = "PlotNumber"]
+
+#fwrite(plot.soilclass, "./clean_data/soilclass_updates.csv")
+
+# bad.soil.class2 <- anti_join(plot.soilclass, soil.classes, by=c('Group_updated'='SoilClassGroup')) %>% select(-PlotNumber) %>%  group_by(SoilClassGroup, SoilClassSubGroup) %>%
+#   tally() %>% filter(n>100)
+# ggplot(bad.soil.class2, aes(x = reorder(SoilClassGroup, -n), y = n)) + geom_bar(stat = "identity")
+# fwrite(bad.soil.class2, "./out_data/bad_soilGroups.csv")
+
+# 
+# ## fix case and update from lookup table
+# plot.soilclass.tst <- plot.soilclass2
+# plot.soilclass.tst[is.na(plot.soilclass.tst)] <- "xxx"
+# setDT(plot.soilclass.tst)[soil.fix, c("SoilClassGroup", "SoilClassSubGroup") := list(Group_new, Subgroup_new), on = .(SoilClassGroup, SoilClassSubGroup)]
+# bad.soil.class.tst <- anti_join(plot.soilclass.tst, soil.classes, by = "SoilClassGroup") %>% select(-PlotNumber) %>%  group_by(SoilClassGroup, SoilClassSubGroup) %>% tally() 
+# 
+# ###bar chart of count of codes in dataset
+# ggplot(bad.soil.form, aes(x = reorder(soilForm, -n), y = n)) + geom_bar(stat = "identity")
+# 
+# 
+# #bad.soil$soilForm <- bad.soil$soilForm
+# bad.soil.codes <- bad.soil %>% select(soilForm) %>% unique
+# #fwrite(bad.soil.codes, "./out_data/badcodestofix.csv")
+
+```
+
+
+Fix data entry errors where the upper and lower depths are reversed
+```{r reorder humus upper and lower depths}
+###reverse depths that are in wrong columns - upper should be larger than low
+### except need to identify Organic Order soils where upper should be less than lower
+organic.soils = c("FO", "M", "H", "F")
+plots.organic.order <- plot.env %>% filter(SoilClassGroup %in% organic.soils) %>% dplyr::select(PlotNumber)
+#fwrite(plots.organic.order, "./out_data/plots_w_OrganicSoils.csv")
+##where organic soils upper should be less than lower
+humus.hor.depths <- plot.humus %>% dplyr::select(PlotNumber, Horizon, UpperDepth, LowerDepth) %>% filter(UpperDepth < LowerDepth)
+### otherwise lower should be less than upper
+
+###
+```
+
+#### Calculate info for ADMIN table
+
+```{r humus depth by plot}
+###calculate total humus depth by plot
+plot.humus <- plot.humus[!is.na(plot.humus$UpperDepth),] 
+plot.humus <- plot.humus[!is.na(plot.humus$LowerDepth),] %>% 
+   dplyr::rowwise() %>% dplyr::mutate(depth=max(UpperDepth:LowerDepth, na.rm = TRUE))
+
+humus.depth <- plot.humus %>% group_by(PlotNumber) %>% 
+   dplyr::mutate(total.thick=max(depth, na.rm = TRUE)) %>% dplyr::select(PlotNumber, total.thick) %>% distinct() %>% arrange(desc(PlotNumber))
+fwrite(humus.depth, "./clean_data/Plot_Humus_Depths.csv", row.names = FALSE, col.names = TRUE)
+
+```
+
+
+
+Soil Texture Classes
+4 classes for association report
+Fine - See def in LMH 25
+Medium Fine - Non-skeletal soils that are not fine (<35% c.f.)
+Medium Coarse - Skeletal soils that are not coarse (35-70% c.f.)
+Coarse - see def in LMH25
+
+```{r TEXTURE group codes for SIVI}
+text.groups <- fread("./out_data/texturecodegroups.csv")
+
+plot.min2[text.groups, text.group := i.Text_group, on = "Texture"]
+plot.min2$text.groups.cf <- "M" 
+plot.min2 <- plot.min2 %>% mutate(text.groups.cf = ifelse((text.group %in% c("C") & PercentCoarseFragsTotal >=35), "C", text.groups.cf))
+
+plot.min2 <- plot.min2 %>%  mutate(text.groups.cf = ifelse((text.group %in% c("MC", "M") & PercentCoarseFragsTotal >=70), "C", text.groups.cf))# %>% filter(text.group == "M")
+
+plot.min2 <- plot.min2 %>% mutate(text.groups.cf = ifelse((text.group %in% c("F", "MF")& (is.na(PercentCoarseFragsTotal) | PercentCoarseFragsTotal <20)), "F", text.groups.cf)) #%>% filter(text.group == "F")
+
+plot.min2 <- plot.min2 %>% mutate(text.groups.cf = ifelse(is.na(text.group), NA, text.groups.cf)) #%>% filter(text.group == "F")
+#plot.min2 <- plot.min2 %>% mutate(text.groups.cf = ifelse((!is.na(text.group) & is.na(text.groups.cf)) ,"M", text.groups.cf)) #%>% filter(text.group == "F")
+
+#plot.min2 <- plot.min2 %>% mutate(text.groups.cf = ifelse((text.group %in% c("MC", "M") & (PercentCoarseFragsTotal >35 & PercentCoarseFragsTotal<70)), "MC","M"))# %>% filter(text.group == "F")
+
+xx <- plot.min2 %>% filter(str_detect(Horizon, "O"))
+```
+
+
+
+#### Update the plot quality fields
+
+```{r Update Admin }
+
+```
+
+
