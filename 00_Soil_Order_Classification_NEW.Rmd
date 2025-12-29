@@ -37,7 +37,7 @@ require(tidyverse)
 require(psych)
 require(DataExplorer)
 
-<<<<<<< HEAD
+
 ```
 # Background
 
@@ -624,7 +624,7 @@ vertisol_test_2 <- filter(plot_sub, Horizon %in% grep("ss(?!j)", plot_sub$Horizo
 
 #Gleysolic
 
-gleysol_test <- filter(plot_sub, Horizon %in% grep("(g(?!j))",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE), & Udepth <= 50)
+gleysol_test <- filter(plot_sub, Horizon %in% grep("(g(?!j))",  plot_sub$Horizon, perl = TRUE, value = TRUE, ignore.case = TRUE) & Udepth <= 50)
 
 #Solonetzic
 
@@ -648,7 +648,10 @@ brunisol <- filter(plot_sub, Horizon %in% grep("B",  plot_sub$Horizon, perl = TR
 
 ```
 =======
+```{r}
+
 library(foreach)
+
 library(doParallel)
 library(dplyr)
 library(data.table)
@@ -874,4 +877,4 @@ dat2 <- rbindlist(x) %>% dplyr::rename(PlotNumber = V1, Order = V2)
 X1 <- full_join(dat2, plot.soil2)
 fwrite(X1, "Soil_Orders.csv")
 ```
->>>>>>> f35e0243cd1e0532d36c077bf141d021684640fc
+
